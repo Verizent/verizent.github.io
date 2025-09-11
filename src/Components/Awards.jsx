@@ -3,19 +3,16 @@ const awards = [
     title: 'PwC Hackathon Champion',
     issuer: 'PwC China',
     year: '2024',
-    // description: 'Gold Medalist in the National Olympiad, recognized for outstanding problem-solving and algorithmic skills.'
   },
   {
     title: 'Dean\'s List 2024-2025',
     issuer: 'The Chinese University of Hong Kong',
     year: '2025',
-    // description: 'Selected as a global finalist for contributions to open-source projects and community mentoring.'
   },
   {
     title: 'Honors at Entrance 2024-2025',
     issuer: 'The Chinese University of Hong Kong',
     year: '2024',
-    // description: 'Awarded for research on AI-driven cybersecurity solutions.'
   }
 ];
 

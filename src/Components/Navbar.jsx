@@ -16,14 +16,10 @@ export default function Navbar() {
 
   return (
     <nav className="w-screen flex items-end">
-      {/* Universal Navigation - hamburger menu for all screen sizes */}
       <div className="relative w-full flex justify-center lg:justify-end lg:pr-[100px]">
-        {/* Menu Items - Expanding Upward */}
+        {/* Menu Items */}
         <div 
-          className={`absolute bottom-16 ${
-            // Position menu based on screen size
-            'lg:right-0 lg:mr-[100px] left-1/2 lg:left-auto transform lg:translate-x-0 -translate-x-1/2'
-          } transition-all duration-500 ${
+          className={`absolute bottom-16 'lg:right-0 lg:mr-[100px] left-1/2 lg:left-auto transform lg:translate-x-0 -translate-x-1/2' transition-all duration-500 ${
             isOpen 
               ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' 
               : 'opacity-0 translate-y-8 scale-95 pointer-events-none'

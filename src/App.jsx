@@ -6,7 +6,6 @@ import { FaLinkedin, FaInstagramSquare } from "react-icons/fa";
 import { RiMailUnreadFill } from "react-icons/ri";
 
 import MyPhoto from './Assets/Photo.png'
-import NavWheel from './Components/NavWheel'
 import Timeline from './Components/Timeline'
 import technical_experience from './Components/TechnicalExperience'
 import Education from './Components/Education'
@@ -94,13 +93,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-      {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
-      {/* Water Drop Transition Overlay */}
+      {/* Water Drop */}
       {isTransitioning && (
         <div 
           className="fixed inset-0 z-50 pointer-events-none"
@@ -117,7 +115,7 @@ export default function App() {
         </div>
       )}
 
-      {/* Navbar - only show when full content is visible */}
+      {/* Navbar */}
       {showFullContent && !isTransitioning && (
         <div 
           className={`fixed bottom-[30px] mb-0 z-20 mt-auto transition-all duration-500 ${
@@ -148,10 +146,10 @@ export default function App() {
           <div className={`transition-all duration-1000 delay-300 ${
             showFullContent && !isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            {/* Hero Section - now with normal height */}
+            {/* Hero Section - normal height */}
             <HeroSection isIntro={false} />
 
-            {/* Content sections with staggered animations */}
+            {/* Content sections */}
             <div className={`transition-all duration-700 delay-500 ${
               showFullContent && !isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
@@ -177,7 +175,6 @@ export default function App() {
               </section>
             </div>
 
-            {/* More sections with additional delays */}
             <div className={`transition-all duration-700 delay-700 ${
               showFullContent && !isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
@@ -246,17 +243,6 @@ export default function App() {
           </div>
         )}
       </div>
-
-      {/* Navigation Wheel - only show when full content is visible */}
-      {/* {showFullContent && !isTransitioning && (
-        <div 
-          className={`fixed bottom-0 right-0 transition-all duration-500 delay-300 ${
-            showFullContent ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 translate-x-4 translate-y-4'
-          }`}
-        >
-          <NavWheel />
-        </div>
-      )} */}
     </div>
   )
 }
