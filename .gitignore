@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# some src files
+./src/App_new.jsx
+./src/App_backup.jsx

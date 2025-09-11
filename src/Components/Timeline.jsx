@@ -4,7 +4,7 @@ export default function Timeline(props) {
   const [isExpanded, setIsExpanded] = useState(false);
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(0);
-  const [lineHeight, setLineHeight] = useState(90); // Default line height
+  const [lineHeight, setLineHeight] = useState(100); // Default line height
 
   const toggleExpand = () => {
     if (props.description) {
@@ -63,44 +63,32 @@ export default function Timeline(props) {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
           <h3 className="text-base font-bold text-gray-800 lg:mb-2 mb-0">{props.name}</h3>
           
-          <div className="lg:flex md:flex hidden items-center space-x-3">
+          <div className="lg:flex md:flex hidden items-center space-x-4">
             {props.duration && (
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-medium">
-                {props.duration}
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-600 text-xs font-semibold shadow-sm">
+                <svg className="w-3 h-3 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                </svg>
+                <p className='text-xs'>{props.duration}</p>
               </span>
             )}
             
             {props.description && (
               <button 
                 onClick={toggleExpand}
-                style={{
-                  width: '28px',
-                  height: '28px',
-                  background: 'transparent',
-                  border: 'none',
-                  outline: 'none',
-                  boxShadow: 'none',
-                  color: '#4B5563', // Tailwind's text-gray-600
-                  fontWeight: 'bold',
-                  fontSize: '0.875rem', // text-sm
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: '9999px', // rounded-full
-                  cursor: 'pointer',
-                  transition: 'transform 0.2s ease',
-                  WebkitTapHighlightColor: 'transparent' // removes tap highlight on mobile
-                }}
-                onMouseDown={e => e.preventDefault()} // prevents focus ring on click
+                className={`group flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 hover:bg-gray-100 border border-gray-300 hover:border-gray-400 transform text-gray-600 hover:text-gray-700 shadow-sm hover:shadow-md hover:scale-105 ${
+                  isExpanded ? 'bg-gray-200 border-gray-400 text-gray-700' : ''
+                }`}
                 aria-label={isExpanded ? "Collapse details" : "Expand details"}
               >
-                <span style={{
-                  transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
-                  display: 'inline-block',
-                  transition: 'transform 0.2s ease'
-                }}>
-                  &gt;
-                </span>
+                <svg 
+                  className={`w-10 h-10 transform transform-transform focus:outline-none text-gray-800 ${isExpanded ? 'rotate-90' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 30 30"
+                >
+                  <path strokeWidth={3} d="M4 2l20 20-20 20" />
+                </svg>
               </button>
             )}
           </div>
@@ -110,23 +98,28 @@ export default function Timeline(props) {
           <p className="text-gray-600 mb-4">{props.headline}</p>
         )}
 
-        <div className="flex items-center space-x-3 md:hidden lg:hidden">
-          {props.duration && (
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-medium">
-              {props.duration}
-            </span>
-          )}
+        <div className="flex items-center justify-between md:hidden lg:hidden mt-3 pt-3 border-t border-gray-100">
+          <div className="flex items-center space-x-2">
+            {props.duration && (
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-600 text-xs font-semibold shadow-sm">
+                <svg className="w-3 h-3 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                </svg>
+                {props.duration}
+              </span>
+            )}
+          </div>
           
           {props.description && (
             <button 
               onClick={toggleExpand}
-              className={`flex items-center justify-center w-7 h-7 rounded-full hover:bg-gray-100 transition-colors ${
-                isExpanded ? 'transform rotate-90' : ''
+              className={`group flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 hover:bg-gray-100 border border-gray-300 hover:border-gray-400 transition-all duration-300 text-gray-600 hover:text-gray-700 shadow-sm hover:shadow-md transform hover:scale-105 ${
+                isExpanded ? 'bg-gray-200 border-gray-400 text-gray-700' : ''
               }`}
               aria-label={isExpanded ? "Collapse details" : "Expand details"}
             >
               <svg 
-                className="w-4 h-4 text-gray-600" 
+                className={`w-4 h-4 transition-all duration-300 ${isExpanded ? 'rotate-90' : ''}`} 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
