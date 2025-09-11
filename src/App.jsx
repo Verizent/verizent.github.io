@@ -1,5 +1,7 @@
-import ReactGitHubCalendar from 'react-github-calendar'
 import { useState } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import { FaLinkedin, FaInstagramSquare } from "react-icons/fa";
 import { RiMailUnreadFill } from "react-icons/ri";
 
@@ -13,10 +15,14 @@ import Awards from './Components/Awards'
 import TechStack from './Components/TechStack'
 import MyProjects from './Components/MyProjects'
 
-
 export default function App() {
   const [showFullContent, setShowFullContent] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
+
+  AOS.init({
+    duration: 1200,
+    once: false,
+  });
 
   const handleScrollForMore = () => {
     setIsTransitioning(true)
@@ -33,7 +39,7 @@ export default function App() {
       id="Hero" 
       className={`transition-all duration-1000 ease-out ${
         isIntro && !isTransitioning
-          ? "mb-0 py-auto h-screen flex flex-col justify-center my-auto align-middle items-center relative text-left w-full" 
+          ? "mb-0 py-auto h-[100dvh] flex flex-col justify-center my-auto align-middle items-center relative text-left w-full" 
           : showFullContent || isTransitioning
           ? "py-[30px] h-auto"
           : "mb-0 py-auto h-auto flex flex-col justify-center my-auto align-middle items-center relative text-left w-full"
@@ -42,13 +48,14 @@ export default function App() {
         transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
         transform: isTransitioning ? 'scale(0.98)' : 'scale(1)',
       }}
+      data-aos="fade-up"
     >
       <h2 className='text-2xl font-bold mb-3 text-left w-full'>Hi, I'm</h2>
       <h1 className='mb-[20px] text-4xl font-extrabold leading-tight text-left w-full'>Michael Richard Suryajaya.</h1>
       <div className="inline-flex w-full">
         <div className='block w-[65%] pr-8'>
           <p className="text-gray-600 text-base lg:text-lg text-left w-full">
-            A CS student and software engineer focused on AI, cybersecurity, and robotics. I build reliable MERN web apps. Outside work: pop covers on piano/guitar, Valorant, and edtech non-profit collabs. Always open to building something cool or chatting about tech's future.
+            A CS student and software engineer focused on AI, cybersecurity, and robotics. I build reliable MERN web apps. Outside work: pop covers on piano/guitar, Valorant, and edtech non-profit collabs. Always open to building something cool or random chats.
           </p>
           <div className='mt-[20px] flex flex-row justify-start text-left'>
             <a className="mr-[10px] text-gray-600 hover:text-black transition-colors text-[30px]" href="https://www.instagram.com/michaelrichardsuryajaya" target="_blank" rel="noopener noreferrer"><FaInstagramSquare/></a>
@@ -66,17 +73,13 @@ export default function App() {
         }`}>
           <button
             onClick={handleScrollForMore}
-            className="backdrop-blur-lg bg-white/20 hover:bg-white/30 dark:bg-gray-900/20 dark:hover:bg-gray-900/30 border border-gray-300 dark:border-gray-700 shadow-lg rounded-full px-6 py-3 flex flex-col items-center gap-2 transition-all duration-300 group hover:scale-105"
-            style={{
-              boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
-              border: '1px solid rgba(255, 255, 255, 0.18)',
-            }}
+            className="backdrop-blur-lg bg-white/40 hover:bg-white/60 border border-white/30 hover:border-white/40 shadow-lg hover:shadow-xl rounded-full px-6 py-3 flex flex-col items-center gap-2 transition-all duration-300 group hover:scale-105"
           >
-            <span className="text-gray-800 dark:text-gray-100 font-medium text-sm">
+            <span className="text-gray-700 hover:text-gray-800 font-medium text-sm">
               Scroll for more
             </span>
             <svg 
-              className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:translate-y-1 transition-transform duration-300" 
+              className="w-5 h-5 text-gray-600 hover:text-gray-700 group-hover:translate-y-1 transition-transform duration-300" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -90,7 +93,13 @@ export default function App() {
   )
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </div>
       {/* Water Drop Transition Overlay */}
       {isTransitioning && (
         <div 
@@ -120,7 +129,7 @@ export default function App() {
       )}
 
       <div 
-        className={`max-w-2xl mx-auto px-[5%] lg:px-0 w-full transition-all duration-1000 ${
+        className={`max-w-2xl mx-auto px-[5%] lg:px-0 w-full transition-all duration-1000 relative z-10 ${
           isTransitioning ? 'scale-98 opacity-90' : 'scale-100 opacity-100'
         }`}
         style={{
@@ -149,7 +158,9 @@ export default function App() {
               <hr/>
 
               {/* About Section */}
-              <section id="About" className='mt-[50px] text-xs lg:text-sm'>
+              <section id="About" className='mt-[50px] text-xs lg:text-sm'
+                data-aos="fade-up"
+              >
                 <h2 className='text-base font-bold mb-9'>About</h2>
                 <p className='text-sm text-gray-600 text-justify'>
                   I was born in Indonesia and now study Computer Science in Hong Kong, where most of my adventures happen from behind a screen. I’m the kind of person who builds a Discord bot to track currency exchange rates just because the idea popped into my head and wouldn’t leave. That’s how most things start for me: a spark of curiosity, a few hours of research, and suddenly I’m knee-deep in APIs and documentation. 
@@ -171,7 +182,9 @@ export default function App() {
               showFullContent && !isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
               {/* Technical Experience Section */}
-              <section id="TechExperience" className='mt-[50px] text-xs lg:text-sm'>
+              <section id="TechExperience" className='mt-[50px] text-xs lg:text-sm'
+                data-aos="fade-up"
+              >
                 <h2 className='text-base font-bold mb-9'>Technical Experience</h2>
                 {technical_experience.map((exp) => (
                   <Timeline key={exp.id} id={exp.id} logo={exp.logo} name={exp.company_name} duration={exp.duration} headline={exp.position} description={true} description_list={exp.description_list} isLast={exp.isLast}/>
@@ -179,7 +192,9 @@ export default function App() {
               </section>
 
               {/* Education Section */}
-              <section id="Education" className='mt-[50px] text-xs lg:text-sm'>
+              <section id="Education" className='mt-[50px] text-xs lg:text-sm'
+                data-aos="fade-up"
+              >
                 <h2 className='text-base font-bold mb-9'>Education</h2>
                 {Education.map((ed) => (
                   <Timeline key={ed.id} id={ed.id} logo={ed.logo} name={ed.school_name} duration={ed.duration} headline={ed.degree} description={false} isLast={ed.isLast}/>
@@ -187,7 +202,9 @@ export default function App() {
               </section>
 
               {/* Awards Section */}
-              <section id="Awards" className='mt-[50px] text-xs lg:text-sm'>
+              <section id="Awards" className='mt-[50px] text-xs lg:text-sm'
+                data-aos="fade-up"
+              >
                 <h2 className='text-base font-bold mb-9'>Awards</h2>
                 <div className='flex flex-row w-full'>
                   <Awards />
@@ -195,7 +212,9 @@ export default function App() {
               </section>
 
               {/* Tech Stack */}
-              <section id="TechStack" className='mt-[50px]'>
+              <section id="TechStack" className='mt-[50px]'
+                data-aos="fade-up"
+              >
                 <h2 className='text-3xl font-bold mb-1 text-center'>My Tech Stack</h2>
                 <p className='text-base mb-9 text-center'>
                   Technologies I work with to build interesting projects.
@@ -206,19 +225,22 @@ export default function App() {
               </section>
 
               {/* My Projects */}
-              <section id="Projects" className='mt-[50px]'>
+              <section id="Projects" className='mt-[50px]'
+                data-aos="fade-up"
+              >
                 <h2 className='text-3xl font-bold mb-1 text-center'>My Projects</h2>
-                <p className='text-base mb-9 text-center'>
+                <p className='text-base mb-9 text-center text-gray-600'>
                   A selection of my recent work, showcasing my skills and interests.
                 </p>
                 <MyProjects />
               </section>
-
+              
               {/* Movie Recommendations */}
               
 
               {/* Contacts Section */}
               
+              <div className='w-full text-center mb-24 text-gray-600'>That's all for now :)</div>
 
             </div>
           </div>

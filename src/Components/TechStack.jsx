@@ -8,10 +8,10 @@ const techCategories = {
       1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", title: "CSS" },
       2: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", title: "JavaScript" },
     },
-    "Frameworks & Libraries": {
+    "Frameworks": {
+      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", title: "Tailwind CSS" },
       1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", title: "React.js" },
       2: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg", title: "Vite" },
-      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", title: "Tailwind CSS" },
     }
   },
   "Computational Tools": {
@@ -24,7 +24,7 @@ const techCategories = {
     "Tools": {
       0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg", title: "Jupyter" },
     },
-    "ML & AI Frameworks": {
+    "ML & AI": {
       0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", title: "Pandas" },
       1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg", title: "NumPy" },
       2: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg", title: "Scikit-Learn" },
@@ -39,11 +39,10 @@ const techCategories = {
       4: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", title: "Git" },
       5: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg", title: "GitHub" },
       6: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg", title: "Docker" },
-    }
-  },
-  "Others": {
-    "":{
-      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", title: "Linux" },
+      7: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", title: "Linux" },
+    },
+    "Frameworks": {
+      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", title: "Express.js" },
     }
   }
 };
@@ -60,7 +59,7 @@ const cardDetails = {
     8: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", title: "Node.js" },
     9: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", title: "React.js" },
     10: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg", title: "Arduino" },
-    11: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", title: "AWS" }, 
+    11: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", title: "AWS" },
     12: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg", title: "Jupyter" },
     13: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", title: "Git" },
     14: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg", title: "GitHub" },
@@ -68,22 +67,23 @@ const cardDetails = {
     16: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", title: "Tailwind CSS" },
     17: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", title: "Linux" },
     18: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg", title: "Vite" },
+    19: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", title: "Express" },
 };
 
 function TechCategorySection({ title, subcategories }) {
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold mb-4 text-center">{title}</h3>
+      <h3 className="text-xl font-bold mb-4 text-center text-gray-800">{title}</h3>
       {Object.entries(subcategories).map(([subcategoryName, technologies]) => (
         <div key={subcategoryName} className="mb-4">
           <h4 className="text-lg font-semibold mb-2 text-gray-700 text-center">{subcategoryName}</h4>
           <div className="flex flex-wrap justify-center gap-4">
             {Object.entries(technologies).map(([key, tech]) => (
               <div key={key} className="flex flex-col items-center">
-                <div className="relative w-16 h-16 mb-2 bg-white rounded-lg p-2 shadow-sm border border-gray-200">
+                <div className="relative w-16 h-16 mb-2 backdrop-blur-lg bg-white/50 rounded-xl p-2 shadow-lg border border-white/30 hover:bg-white/60 hover:scale-105 transition-all duration-300">
                   <img src={tech.imgUrl} alt={tech.title} title={tech.title} className="w-full h-full object-contain" />
                 </div>
-                <span className="text-xs text-gray-600 text-center">{tech.title}</span>
+                <span className="text-xs text-gray-700 text-center font-medium">{tech.title}</span>
               </div>
             ))}
           </div>
@@ -92,6 +92,7 @@ function TechCategorySection({ title, subcategories }) {
     </div>
   );
 }
+
 function CarouselItem({ imgUrl, imgTitle }) {
   return (
     <div className="carousel-card">
@@ -109,29 +110,31 @@ export default function TechStack() {
 
   return (
     <div>
-      <div className={`carousel-container  ${!hide ? "block opacity-100" : "hidden opacity-0"}`}>
+      <div className={`carousel-container ${!hide ? "block opacity-100" : "hidden opacity-0"}`}>
         <div className="carousel-track">
           {Object.keys(cardDetails).map((detailKey) => {
             return (
               <CarouselItem
+                key={detailKey}
                 imgUrl={cardDetails[detailKey].imgUrl}
                 imgTitle={cardDetails[detailKey].title}
-              ></CarouselItem>
+              />
             );
           })}
           {Object.keys(cardDetails).map((detailKey) => {
             return (
               <CarouselItem
+                key={`duplicate-${detailKey}`}
                 imgUrl={cardDetails[detailKey].imgUrl}
                 imgTitle={cardDetails[detailKey].title}
-              ></CarouselItem>
+              />
             );
           })}
         </div>
       </div>
-      <div className="w-[100%] text-center items-center">
+      <div className="w-full text-center items-center">
         <div className={`${hide ? "block" : "hidden"}`}>
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mt-6">
+          <div className="backdrop-blur-xl bg-white/30 border border-white/20 rounded-2xl p-6 shadow-xl mt-6">
             {Object.entries(techCategories).map(([categoryName, subcategories]) => (
               <TechCategorySection
                 key={categoryName}
@@ -141,7 +144,10 @@ export default function TechStack() {
             ))}
           </div>
         </div>
-        <button className="rounded-full py-[3px] text-center border-[0.5px] border-gray-800 bg-white/30 hover:bg-gray-200/30 hover:border-gray-900 hover:border-[0.5px] focus:outline-none transition-colors w-[25%] items-center align-middle mx-auto mt-[30px]" onClick={toggleDetails}>
+        <button 
+          className="rounded-full py-2 px-6 text-center backdrop-blur-lg bg-white/40 hover:bg-white/60 border border-white/30 hover:border-white/40 focus:outline-none transition-all duration-300 text-gray-700 hover:text-gray-800 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto mt-4" 
+          onClick={toggleDetails}
+        >
           {!hide ? "Show Details" : "Hide Details"}
         </button>
       </div>

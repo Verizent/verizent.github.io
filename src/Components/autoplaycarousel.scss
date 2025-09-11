@@ -17,15 +17,17 @@
   height: 100px;
   flex-shrink: 0;
   &:hover {
-    transform: scale(0.9);
-    box-shadow: 5px 5px 8px rgba(222, 222, 222, 0.362),
-      10px 10px 8px rgba(152, 133, 133, 0.392),
-      15px 15px 8px rgba(139, 154, 139, 0.303);
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3),
+      0 4px 16px rgba(255, 255, 255, 0.3);
   }
   border-radius: 20%;
-  background: white;
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(31, 38, 135, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-card > img {

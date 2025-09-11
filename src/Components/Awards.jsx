@@ -25,12 +25,12 @@ export default function Awards() {
       {awards.map((award, idx) => (
         <div
           key={idx}
-          className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col justify-between"
+          className="backdrop-blur-xl bg-white/30 border border-white/20 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-white/40 transition-all duration-300 hover:scale-[1.02] p-6 flex flex-col justify-between"
         >
           <div>
-            <h3 className="text-base font-semibold text-gray-800 dark:text-white mb-1">{award.title}</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{award.issuer} &bull; {award.year}</p>
-            <p className="text-gray-700 dark:text-gray-300 text-sm">{award.description}</p>
+            <h3 className="text-base font-semibold text-gray-800 mb-1">{award.title}</h3>
+            <p className="text-sm text-gray-600 mb-2">{award.issuer} &bull; {award.year}</p>
+            <p className="text-gray-700 text-sm">{award.description}</p>
           </div>
         </div>
       ))}
