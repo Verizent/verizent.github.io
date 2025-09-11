@@ -4,7 +4,7 @@ export default function Timeline(props) {
   const [isExpanded, setIsExpanded] = useState(false);
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(0);
-  const [lineHeight, setLineHeight] = useState(150); // Default line height
+  const [lineHeight, setLineHeight] = useState(100); // Default line height
 
   const toggleExpand = () => {
     if (props.description) {

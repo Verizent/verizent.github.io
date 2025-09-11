@@ -2,6 +2,12 @@ import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
+    name: 'Online Exam Invigilator App',
+    description: 'A live exam monitoring app leveraging Amazon Rekognition for facial analysis and cheat detection (made for the PwC Hackathon).',
+    github: null,
+    link: null,
+  },
+  {
     name: 'INAkademia',
     description: 'A non-profit platform that empowers students by offering free educational resources, mentorship, and a collaborative learning community.',
     github: null,

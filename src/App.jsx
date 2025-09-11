@@ -184,7 +184,9 @@ export default function App() {
               >
                 <h2 className='text-base font-bold mb-9'>Technical Experience</h2>
                 {technical_experience.map((exp) => (
-                  <Timeline key={exp.id} id={exp.id} logo={exp.logo} name={exp.company_name} duration={exp.duration} headline={exp.position} description={true} description_list={exp.description_list} isLast={exp.isLast}/>
+                  <div className='mb-5'>
+                    <Timeline key={exp.id} id={exp.id} logo={exp.logo} name={exp.company_name} duration={exp.duration} headline={exp.position} description={true} description_list={exp.description_list} isLast={exp.isLast}/>
+                  </div>
                 ))}
               </section>
 
@@ -194,7 +196,9 @@ export default function App() {
               >
                 <h2 className='text-base font-bold mb-9'>Education</h2>
                 {Education.map((ed) => (
-                  <Timeline key={ed.id} id={ed.id} logo={ed.logo} name={ed.school_name} duration={ed.duration} headline={ed.degree} description={false} isLast={ed.isLast}/>
+                  <div className='mb-5'>
+                    <Timeline key={ed.id} id={ed.id} logo={ed.logo} name={ed.school_name} duration={ed.duration} headline={ed.degree} description={false} isLast={ed.isLast}/>
+                  </div>
                 ))}
               </section>
 
