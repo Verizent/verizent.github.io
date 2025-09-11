@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -32,3 +32,20 @@ jobs:
 
       - name: List build output
         run: ls -la docs
+
+  revert-on-failure:
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+    if: failure()
+    steps:
+      - name: Checkout previous commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Revert failed commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git revert --no-edit ${{ github.sha }}
+          git push origin master
