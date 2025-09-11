@@ -31,4 +31,4 @@ jobs:
           publish_branch: gh-pages
 
       - name: List build output
-        run: ls -la dist
+        run: ls -la docs
