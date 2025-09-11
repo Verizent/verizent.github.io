@@ -18,7 +18,7 @@ const technical_experience = [
     id: 1,
     logo: BPK_Penabur,
     isLast: true,
-    company_name: "SMAK 1 Penabur Jakarta",
+    company_name: "Smakonecup",
     duration: "May 2023 - October 2023",
     position: "Web Developer",
     description_list: [

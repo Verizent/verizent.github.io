@@ -1,5 +1,7 @@
 import ReactGitHubCalendar from 'react-github-calendar'
 import { useState } from 'react'
+import { FaLinkedin, FaInstagramSquare } from "react-icons/fa";
+import { RiMailUnreadFill } from "react-icons/ri";
 
 import MyPhoto from './Assets/Photo.png'
 import NavWheel from './Components/NavWheel'
@@ -8,6 +10,9 @@ import technical_experience from './Components/TechnicalExperience'
 import Education from './Components/Education'
 import Navbar from './Components/Navbar'
 import Awards from './Components/Awards'
+import TechStack from './Components/TechStack'
+import MyProjects from './Components/MyProjects'
+
 
 export default function App() {
   const [showFullContent, setShowFullContent] = useState(false)
@@ -45,6 +50,11 @@ export default function App() {
           <p className="text-gray-600 text-base lg:text-lg text-left w-full">
             A CS student and software engineer focused on AI, cybersecurity, and robotics. I build reliable MERN web apps. Outside work: pop covers on piano/guitar, Valorant, and edtech non-profit collabs. Always open to building something cool or chatting about tech's future.
           </p>
+          <div className='mt-[20px] flex flex-row justify-start text-left'>
+            <a className="mr-[10px] text-gray-600 hover:text-black transition-colors text-[30px]" href="https://www.instagram.com/michaelrichardsuryajaya" target="_blank" rel="noopener noreferrer"><FaInstagramSquare/></a>
+            <a className="mr-[10px] text-gray-600 hover:text-black transition-colors text-[30px]" href="https://id.linkedin.com/in/michael-richard-suryajaya" target="_blank" rel="noopener noreferrer"><FaLinkedin/></a>
+            <a className="mr-[10px] text-gray-600 hover:text-black transition-colors text-[30px]" href="mailto:mrichardsuryajaya@gmail.com" target="_blank" rel="noopener noreferrer"><RiMailUnreadFill/></a>
+          </div>
         </div>
         <img src={MyPhoto} alt="MyPhoto" className="w-[25%] max-w-[320px] ml-[2%] mx-auto flex h-auto align-middle items-center justify-center my-auto rounded-full object-cover hover:shadow-xl transition-shadow shadow-lg"/>
       </div>
@@ -139,10 +149,19 @@ export default function App() {
               <hr/>
 
               {/* About Section */}
-              <section id="About" className='mt-[20px] text-xs lg:text-sm'>
-                <h2 className='text-base font-bold'>About</h2>
-                <p className='text-sm text-gray-600'>
-                  W
+              <section id="About" className='mt-[50px] text-xs lg:text-sm'>
+                <h2 className='text-base font-bold mb-9'>About</h2>
+                <p className='text-sm text-gray-600 text-justify'>
+                  I was born in Indonesia and now study Computer Science in Hong Kong, where most of my adventures happen from behind a screen. I’m the kind of person who builds a Discord bot to track currency exchange rates just because the idea popped into my head and wouldn’t leave. That’s how most things start for me: a spark of curiosity, a few hours of research, and suddenly I’m knee-deep in APIs and documentation. 
+                  <br/>
+                  <br/>
+                  Growing up, I was always drawn to math, tech, and anything that made me ask “how does this work?” That curiosity didn’t stay confined to one field—it pulled me into education, psychology, and even productivity systems. I love learning how people think, how systems scale, and how ideas evolve. I’m not just interested in building things—I want to understand the logic behind them.
+                  <br/>
+                  <br/>
+                  These days, I spend most of my time coding and occasionally falling down rabbit holes of niche topics. I help run INAkademia, a non-profit led by Indonesian students studying both abroad and locally. As head of our Summer Bridge program, I helped organize free online courses for over 250 students and built the registration platform using the MERN stack. It taught me that leadership isn’t about being loud—it’s about being reliable, thoughtful, and willing to learn alongside others.
+                  <br/>
+                  <br/>
+                  I’m a stay-at-home kind of person, happiest when I’m deep in a project, exploring a new concept, or just tinkering with something that might turn into something bigger. Curiosity isn’t just part of me—it’s the reason I keep moving forward.
                 </p>
               </section>
             </div>
@@ -152,25 +171,25 @@ export default function App() {
               showFullContent && !isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
               {/* Technical Experience Section */}
-              <section id="TechExperience" className='mt-[20px] text-xs lg:text-sm'>
-                <h2 className='text-base font-bold mb-2'>Technical Experience</h2>
+              <section id="TechExperience" className='mt-[50px] text-xs lg:text-sm'>
+                <h2 className='text-base font-bold mb-9'>Technical Experience</h2>
                 {technical_experience.map((exp) => (
                   <Timeline key={exp.id} id={exp.id} logo={exp.logo} name={exp.company_name} duration={exp.duration} headline={exp.position} description={true} description_list={exp.description_list} isLast={exp.isLast}/>
                 ))}
               </section>
 
               {/* Education Section */}
-              <section id="Education" className='mt-[20px] text-xs lg:text-sm'>
-                <h2 className='text-base font-bold mb-2'>Education</h2>
+              <section id="Education" className='mt-[50px] text-xs lg:text-sm'>
+                <h2 className='text-base font-bold mb-9'>Education</h2>
                 {Education.map((ed) => (
                   <Timeline key={ed.id} id={ed.id} logo={ed.logo} name={ed.school_name} duration={ed.duration} headline={ed.degree} description={false} isLast={ed.isLast}/>
                 ))}
               </section>
 
               {/* Awards Section */}
-              <section id="Awards" className='mt-[20px] text-xs lg:text-sm'>
-                <h2 className='text-base font-bold mb-2'>Awards</h2>
-                <div className='flex flex-row'>
+              <section id="Awards" className='mt-[50px] text-xs lg:text-sm'>
+                <h2 className='text-base font-bold mb-9'>Awards</h2>
+                <div className='flex flex-row w-full'>
                   <Awards />
                 </div>
               </section>
@@ -178,32 +197,36 @@ export default function App() {
               {/* Tech Stack */}
               <section id="TechStack" className='mt-[50px]'>
                 <h2 className='text-3xl font-bold mb-1 text-center'>My Tech Stack</h2>
-                <p className='text-base mb-2 text-center'>
+                <p className='text-base mb-9 text-center'>
                   Technologies I work with to build interesting projects.
                 </p>
                 <div>
-                  {/* Carousel of my stacks */}
+                  <TechStack />
                 </div>
               </section>
 
               {/* My Projects */}
-              
-
-              {/* My GitHub Activities */}
-              {/* <ReactGitHubCalendar username='Verizent' /> */}
-              
+              <section id="Projects" className='mt-[50px]'>
+                <h2 className='text-3xl font-bold mb-1 text-center'>My Projects</h2>
+                <p className='text-base mb-9 text-center'>
+                  A selection of my recent work, showcasing my skills and interests.
+                </p>
+                <MyProjects />
+              </section>
 
               {/* Movie Recommendations */}
-
+              
 
               {/* Contacts Section */}
+              
+
             </div>
           </div>
         )}
       </div>
 
       {/* Navigation Wheel - only show when full content is visible */}
-      {showFullContent && !isTransitioning && (
+      {/* {showFullContent && !isTransitioning && (
         <div 
           className={`fixed bottom-0 right-0 transition-all duration-500 delay-300 ${
             showFullContent ? 'opacity-100 translate-x-0 translate-y-0' : 'opacity-0 translate-x-4 translate-y-4'
@@ -211,7 +234,7 @@ export default function App() {
         >
           <NavWheel />
         </div>
-      )}
+      )} */}
     </div>
   )
 }

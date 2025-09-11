@@ -1,0 +1,58 @@
+// Credits to Divya Koneti (https://medium.com/@divyakoneti0001/how-to-create-an-autoplay-or-infinite-carousel-in-react-d9f9bff11048)
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  height: 120px;
+  border-color: #4b5563;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.carousel-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  &:hover {
+    transform: scale(0.9);
+    box-shadow: 5px 5px 8px rgba(222, 222, 222, 0.362),
+      10px 10px 8px rgba(152, 133, 133, 0.392),
+      15px 15px 8px rgba(139, 154, 139, 0.303);
+  }
+  border-radius: 20%;
+  background: white;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-card > img {
+  height: 80%;
+  width: 80%;
+  border-radius: 10%;
+}
+
+.carousel-track {
+  display: flex;
+  position: absolute;
+  left: 0;
+  align-items: center;
+  height: 100%;
+  gap: 16px;
+  width: 200%;
+  animation: slide 20s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
