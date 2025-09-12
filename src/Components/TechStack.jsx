@@ -39,14 +39,17 @@ const techCategories = {
       4: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", title: "Git" },
       5: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg", title: "GitHub" },
       6: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg", title: "Docker" },
+      7: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", title: "Postman" },
     },
     "Frameworks": {
       0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", title: "Express.js" },
     }
   },
-  "Others": {
+  "Operating Systems": {
     "": {
       0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", title: "Linux" },
+      1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg", title: "Windows" },
+      2: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg", title: "MacOS" },
     }
   }
 };
@@ -75,6 +78,9 @@ const cardDetails = {
     20: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg", title: "Docker" },
     21: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", title: "Linux" },
     22: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", title: "Express.js" },
+    23: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", title: "Postman" },
+    24: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows11/windows11-original.svg", title: "Windows" },
+    25: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg", title: "macOS" },
 };
 
 function TechCategorySection({ title, subcategories }) {
