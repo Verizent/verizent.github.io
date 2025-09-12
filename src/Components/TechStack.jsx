@@ -39,10 +39,14 @@ const techCategories = {
       4: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", title: "Git" },
       5: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg", title: "GitHub" },
       6: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg", title: "Docker" },
-      7: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", title: "Linux" },
     },
     "Frameworks": {
       0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", title: "Express.js" },
+    }
+  },
+  "Others": {
+    "": {
+      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", title: "Linux" },
     }
   }
 };
