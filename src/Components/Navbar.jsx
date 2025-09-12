@@ -12,6 +12,8 @@ export default function Navbar() {
     { label: 'Experience', href: '/#TechExperience' },
     { label: 'Education', href: '/#Education' },
     { label: 'Awards', href: '/#Awards' },
+    { label: 'Tech Stack', href: '/#TechStack' },
+    { label: 'Projects', href: '/#Projects' },
   ]
 
   return (
