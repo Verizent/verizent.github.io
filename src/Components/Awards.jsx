@@ -18,16 +18,16 @@ const awards = [
 
 export default function Awards() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto">
       {awards.map((award, idx) => (
         <div
           key={idx}
-          className="backdrop-blur-xl bg-white/30 border border-white/20 rounded-2xl shadow-xl hover:shadow-2xl hover:bg-white/40 transition-all duration-300 hover:scale-[1.02] p-6 flex flex-col justify-between"
+          className="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between"
         >
           <div>
-            <h3 className="text-base font-semibold text-gray-800 mb-1">{award.title}</h3>
-            <p className="text-sm text-gray-600 mb-2">{award.issuer} &bull; {award.year}</p>
-            <p className="text-gray-700 text-sm">{award.description}</p>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 tracking-tight transition-colors duration-300">{award.title}</h3>
+            <p className="text-sm text-slate-600 dark:text-slate-300 mb-3 font-medium transition-colors duration-300">{award.issuer} &bull; {award.year}</p>
+            <p className="text-slate-600 dark:text-slate-300 text-sm font-medium transition-colors duration-300">{award.description}</p>
           </div>
         </div>
       ))}

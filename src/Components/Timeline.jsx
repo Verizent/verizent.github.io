@@ -29,7 +29,7 @@ export default function Timeline(props) {
       <div className="flex flex-col items-center -mr-3 relative">
         <div className="flex-shrink-0 z-10">
           {props.logo ? (
-            <div className='relative h-14 w-14 rounded-full overflow-hidden backdrop-blur-xl bg-white/40 border border-white/30 shadow-xl'>
+            <div className='relative h-14 w-14 rounded-full overflow-hidden glass-card glass-card-hover'>
               <img 
                 src={props.logo} 
                 className="absolute inset-0 w-full h-full object-cover" 
@@ -37,15 +37,15 @@ export default function Timeline(props) {
               />
             </div>
           ) : (
-            <div className="rounded-full h-14 w-14 backdrop-blur-xl bg-white/40 border border-white/30 flex items-center justify-center shadow-xl">
-              <span className="text-gray-500 text-xs"></span>
+            <div className="rounded-full h-14 w-14 glass-card flex items-center justify-center">
+              <span className="text-slate-500 dark:text-slate-400 text-xs"></span>
             </div>
           )}
         </div>
         
         {/* Connecting Line */}
         {!props.isLast && (
-          <svg className="mx-auto bg-gradient-to-t from-white/50 via-blue-300/30 to-purple-300/30 backdrop-blur-sm" width="2" height={lineHeight}>
+          <svg className="mx-auto bg-gradient-to-t from-slate-200/20 via-slate-300/15 to-slate-200/20 dark:from-slate-600/20 dark:via-slate-500/15 dark:to-slate-600/20 backdrop-blur-sm" width="2" height={lineHeight}>
             <line 
               x1="1" 
               y1="0" 
@@ -58,14 +58,14 @@ export default function Timeline(props) {
       </div>
       
       {/* Content Card */}
-      <div className="flex-grow backdrop-blur-xl bg-white/30 border border-white/20 rounded-2xl p-5 shadow-xl hover:shadow-2xl hover:bg-white/40 transition-all duration-300 hover:scale-[1.02]">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-          <h3 className="text-base font-bold text-gray-800 lg:mb-2 mb-0">{props.name}</h3>
+      <div className="flex-grow glass-card glass-card-hover rounded-2xl p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 lg:mb-2 mb-0 tracking-tight transition-colors duration-300">{props.name}</h3>
           
           <div className="lg:flex md:flex hidden items-center space-x-4">
             {props.duration && (
-              <span className="inline-flex items-center px-4 py-2 rounded-full backdrop-blur-lg bg-white/40 border border-white/30 text-gray-700 text-xs font-semibold shadow-lg">
-                <svg className="w-3 h-3 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+              <span className="inline-flex items-center px-4 py-2 rounded-full backdrop-blur-lg bg-white/40 border border-white/30 text-gray-700 dark:text-slate-100 text-xs font-semibold shadow-lg">
+                <svg className="w-3 h-3 mr-2 text-gray-600 dark:text-slate-100" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
                 <p className='text-xs'>{props.duration}</p>
@@ -75,8 +75,8 @@ export default function Timeline(props) {
             {props.description && (
               <button 
                 onClick={toggleExpand}
-                className={`group flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-lg bg-white/40 hover:bg-white/60 border border-white/30 hover:border-white/40 text-gray-600 hover:text-gray-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 px-2 py-0 ${
-                  isExpanded ? 'bg-white/60 border-white/40 text-gray-700' : ''
+                className={`group flex items-center justify-center w-10 h-10 rounded-full glass-button glass-button-hover text-slate-600 dark:text-slate-100 hover:text-slate-800 dark:hover:text-slate-200 transform hover:scale-105 transition-all duration-300 px-2 py-0 ${
+                  isExpanded ? 'bg-slate-900/15 dark:bg-white/20 border-slate-200/40 dark:border-white/30 text-slate-800 dark:text-slate-200' : ''
                 }`}
                 aria-label={isExpanded ? "Collapse details" : "Expand details"}
               >
@@ -94,14 +94,14 @@ export default function Timeline(props) {
         </div>
         
         {props.headline && (
-          <p className="text-gray-700 mb-4">{props.headline}</p>
+          <p className="text-slate-700 dark:text-slate-300 mb-4 font-medium transition-colors duration-300">{props.headline}</p>
         )}
 
-        <div className="flex items-center justify-between md:hidden lg:hidden mt-3 pt-3 border-t border-white/30">
+        <div className="flex items-center justify-between md:hidden lg:hidden mt-3 pt-3 border-t border-slate-200/30">
           <div className="flex items-center space-x-2">
             {props.duration && (
-              <span className="inline-flex items-center px-4 py-2 rounded-full backdrop-blur-lg bg-white/40 border border-white/30 text-gray-700 text-xs font-semibold shadow-lg">
-                <svg className="w-3 h-3 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+              <span className="inline-flex items-center px-4 py-2 rounded-full glass-button glass-button-hover text-slate-700 dark:text-slate-300 text-xs font-semibold transition-colors duration-300">
+                <svg className="w-3 h-3 mr-2 text-slate-600 dark:text-slate-400" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                 </svg>
                 {props.duration}
@@ -112,8 +112,8 @@ export default function Timeline(props) {
           {props.description && (
             <button 
               onClick={toggleExpand}
-              className={`group flex items-center justify-center w-10 h-10 rounded-full backdrop-blur-lg bg-white/40 hover:bg-white/60 border border-white/30 hover:border-white/40 text-gray-600 hover:text-gray-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ${
-                isExpanded ? 'bg-white/60 border-white/40 text-gray-700' : ''
+              className={`group flex items-center justify-center w-10 h-10 rounded-full glass-button glass-button-hover text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transform hover:scale-105 transition-all duration-300 ${
+                isExpanded ? 'bg-slate-900/15 dark:bg-white/20 border-slate-200/40 dark:border-white/30 text-slate-800 dark:text-slate-200' : ''
               }`}
               aria-label={isExpanded ? "Collapse details" : "Expand details"}
             >
@@ -135,12 +135,12 @@ export default function Timeline(props) {
             className="overflow-hidden transition-all duration-500"
             style={{ height: isExpanded ? `${contentHeight}px` : '0' }}
           >
-            <div className="mt-4 pt-4 border-t border-white/30">
-              <ul className="space-y-2">
+            <div className="mt-4 pt-4 border-t border-slate-200/30 dark:border-slate-600/30">
+              <ul className="space-y-3">
                 {desc_list.map((desc, index) => (
-                  <li key={index} className="text-gray-700 flex items-start">
+                  <li key={index} className="text-slate-600 dark:text-slate-300 flex items-start font-medium transition-colors duration-300">
                     <svg 
-                      className="w-4 h-4 text-gray-500 mt-1 mr-2 flex-shrink-0" 
+                      className="w-4 h-4 text-slate-500 dark:text-slate-400 mt-1 mr-3 flex-shrink-0" 
                       fill="currentColor" 
                       viewBox="0 0 20 20"
                     >

@@ -86,17 +86,17 @@ const cardDetails = {
 function TechCategorySection({ title, subcategories }) {
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold mb-4 text-center text-gray-800">{title}</h3>
+      <h3 className="text-2xl font-bold mb-6 text-center text-slate-900 dark:text-slate-100 tracking-tight transition-colors duration-300">{title}</h3>
       {Object.entries(subcategories).map(([subcategoryName, technologies]) => (
         <div key={subcategoryName} className="mb-4">
-          <h4 className="text-lg font-semibold mb-2 text-gray-700 text-center">{subcategoryName}</h4>
+          <h4 className="text-lg font-semibold mb-3 text-slate-700 dark:text-slate-300 text-center tracking-wide transition-colors duration-300">{subcategoryName}</h4>
           <div className="flex flex-wrap justify-center gap-4">
             {Object.entries(technologies).map(([key, tech]) => (
               <div key={key} className="flex flex-col items-center">
-                <div className="relative w-16 h-16 mb-2 backdrop-blur-lg bg-white/50 rounded-xl p-2 shadow-lg border border-white/30 hover:bg-white/60 hover:scale-105 transition-all duration-300">
+                <div className="relative w-16 h-16 mb-3 glass-card glass-card-hover rounded-xl p-2">
                   <img src={tech.imgUrl} alt={tech.title} title={tech.title} className="w-full h-full object-contain" />
                 </div>
-                <span className="text-xs text-gray-700 text-center font-medium">{tech.title}</span>
+                <span className="text-xs text-slate-600 dark:text-slate-300 text-center font-semibold transition-colors duration-300">{tech.title}</span>
               </div>
             ))}
           </div>
@@ -147,7 +147,7 @@ export default function TechStack() {
       </div>
       <div className="w-full text-center items-center">
         <div className={`${hide ? "block" : "hidden"}`}>
-          <div className="backdrop-blur-xl bg-white/30 border border-white/20 rounded-2xl p-6 shadow-xl mt-6">
+          <div className="glass-card rounded-2xl p-8 mt-8">
             {Object.entries(techCategories).map(([categoryName, subcategories]) => (
               <TechCategorySection
                 key={categoryName}
@@ -158,7 +158,7 @@ export default function TechStack() {
           </div>
         </div>
         <button 
-          className="rounded-full py-2 px-6 text-center backdrop-blur-lg bg-white/40 hover:bg-white/60 border border-white/30 hover:border-white/40 focus:outline-none transition-all duration-300 text-gray-700 hover:text-gray-800 font-medium shadow-lg hover:shadow-xl transform hover:scale-105 mx-auto mt-4" 
+          className="rounded-full py-3 px-8 text-center glass-button glass-button-hover focus:outline-none transition-all duration-300 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 font-semibold transform hover:scale-105 mx-auto mt-6" 
           onClick={toggleDetails}
         >
           {!hide ? "Show Details" : "Hide Details"}

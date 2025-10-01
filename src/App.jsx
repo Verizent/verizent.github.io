@@ -13,6 +13,7 @@ import Navbar from './Components/Navbar'
 import Awards from './Components/Awards'
 import TechStack from './Components/TechStack'
 import MyProjects from './Components/MyProjects'
+import DarkModeToggle from './Components/DarkModeToggle';
 
 export default function App() {
   const [showFullContent, setShowFullContent] = useState(false)
@@ -49,17 +50,17 @@ export default function App() {
       }}
       data-aos="fade-up"
     >
-      <h2 className='text-2xl font-bold mb-3 text-left w-full'>Hi, I'm</h2>
-      <h1 className='mb-[20px] text-4xl font-extrabold leading-tight text-left w-full'>Michael Richard Suryajaya.</h1>
+      <h2 className='text-2xl font-semibold mb-4 text-left w-full text-slate-600 dark:text-slate-400 tracking-wide transition-colors duration-300'>Hi, I'm</h2>
+      <h1 className='mb-6 text-5xl font-bold leading-tight text-left w-full text-gradient dark:text-gradient-dark font-inter tracking-tight'>Michael Richard Suryajaya</h1>
       <div className="inline-flex w-full">
         <div className='block w-[65%] pr-8'>
-          <p className="text-gray-600 text-base lg:text-lg text-left w-full">
+          <p className="text-slate-700 dark:text-slate-300 text-lg lg:text-xl text-left w-full leading-relaxed font-medium transition-colors duration-300">
             A CS student and software engineer focused on AI, cybersecurity, and robotics. I build reliable MERN web apps. Outside work: pop covers on piano/guitar, Valorant, and edtech non-profit collabs. Always open to building something cool or random chats.
           </p>
           <div className='mt-[20px] flex flex-row justify-start text-left'>
-            <a className="mr-[10px] text-gray-600 hover:text-black transition-colors text-[30px]" href="https://www.instagram.com/michaelrichardsuryajaya" target="_blank" rel="noopener noreferrer"><FaInstagramSquare/></a>
-            <a className="mr-[10px] text-gray-600 hover:text-black transition-colors text-[30px]" href="https://id.linkedin.com/in/michael-richard-suryajaya" target="_blank" rel="noopener noreferrer"><FaLinkedin/></a>
-            <a className="mr-[10px] text-gray-600 hover:text-black transition-colors text-[30px]" href="mailto:mrichardsuryajaya@gmail.com" target="_blank" rel="noopener noreferrer"><RiMailUnreadFill/></a>
+            <a className="mr-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300 text-3xl hover:scale-110 transform" href="https://www.instagram.com/michaelrichardsuryajaya" target="_blank" rel="noopener noreferrer"><FaInstagramSquare/></a>
+            <a className="mr-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300 text-3xl hover:scale-110 transform" href="https://id.linkedin.com/in/michael-richard-suryajaya" target="_blank" rel="noopener noreferrer"><FaLinkedin/></a>
+            <a className="mr-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300 text-3xl hover:scale-110 transform" href="mailto:mrichardsuryajaya@gmail.com" target="_blank" rel="noopener noreferrer"><RiMailUnreadFill/></a>
           </div>
         </div>
         <img src={MyPhoto} alt="MyPhoto" className="w-[25%] max-w-[320px] ml-[2%] mx-auto flex h-auto align-middle items-center justify-center my-auto rounded-full object-cover hover:shadow-xl transition-shadow shadow-lg"/>
@@ -72,13 +73,13 @@ export default function App() {
         }`}>
           <button
             onClick={handleScrollForMore}
-            className="backdrop-blur-lg bg-white/40 hover:bg-white/60 border border-white/30 hover:border-white/40 shadow-lg hover:shadow-xl rounded-full px-6 py-3 flex flex-col items-center gap-2 transition-all duration-300 group hover:scale-105"
+            className="glass-button glass-button-hover rounded-full px-8 py-4 flex flex-col items-center gap-3 group hover:scale-105 transform"
           >
-            <span className="text-gray-700 hover:text-gray-800 font-medium text-sm">
+            <span className="text-slate-800 dark:text-slate-200 font-semibold text-sm tracking-wide transition-colors duration-300">
               Scroll for more
             </span>
             <svg 
-              className="w-5 h-5 text-gray-600 hover:text-gray-700 group-hover:translate-y-1 transition-transform duration-300" 
+              className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:translate-y-1 transition-transform duration-300" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -92,11 +93,11 @@ export default function App() {
   )
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50 dark:from-gray-900 dark:via-slate-900 dark:to-zinc-900 transition-colors duration-500">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-pink-400/20 to-orange-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-slate-600/8 to-gray-700/8 dark:from-slate-400/8 dark:to-gray-300/8 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-zinc-600/8 to-slate-700/8 dark:from-zinc-400/8 dark:to-slate-300/8 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-br from-gray-600/8 to-slate-600/8 dark:from-gray-400/8 dark:to-slate-400/8 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
       {/* Water Drop */}
       {isTransitioning && (
@@ -156,11 +157,11 @@ export default function App() {
               <hr/>
 
               {/* About Section */}
-              <section id="About" className='mt-[50px] text-xs lg:text-sm'
+              <section id="About" className='mt-16 text-sm lg:text-base'
                 data-aos="fade-up"
               >
-                <h2 className='text-base font-bold mb-9'>About</h2>
-                <p className='text-sm text-gray-600 text-justify'>
+                <h2 className='text-3xl font-bold mb-12 text-slate-900 dark:text-slate-100 tracking-tight transition-colors duration-300'>About</h2>
+                <p className='text-base text-slate-600 dark:text-slate-300 text-justify leading-relaxed font-medium transition-colors duration-300'>
                   I was born in Indonesia and now study Computer Science in Hong Kong, where most of my adventures happen from behind a screen. I’m the kind of person who builds a Discord bot to track currency exchange rates just because the idea popped into my head and wouldn’t leave. That’s how most things start for me: a spark of curiosity, a few hours of research, and suddenly I’m knee-deep in APIs and documentation. 
                   <br/>
                   <br/>
@@ -179,45 +180,48 @@ export default function App() {
               showFullContent && !isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             }`}>
               {/* Technical Experience Section */}
-              <section id="TechExperience" className='mt-[50px] text-xs lg:text-sm'
+              <section id="TechExperience" className='mt-20 text-sm lg:text-base'
                 data-aos="fade-up"
               >
-                <h2 className='text-base font-bold mb-9'>Technical Experience</h2>
+                <h2 className='text-3xl font-bold mb-12 text-slate-900 dark:text-slate-100 tracking-tight transition-colors duration-300'>Technical Experience</h2>
                 {technical_experience.map((exp) => (
-                  <div className='mb-5'>
+                  <div className='mb-0'>
                     <Timeline key={exp.id} id={exp.id} logo={exp.logo} name={exp.company_name} duration={exp.duration} headline={exp.position} description={true} description_list={exp.description_list} isLast={exp.isLast}/>
                   </div>
                 ))}
               </section>
 
               {/* Education Section */}
-              <section id="Education" className='mt-[50px] text-xs lg:text-sm'
+              <section id="Education" className='mt-20 text-sm lg:text-base'
                 data-aos="fade-up"
               >
-                <h2 className='text-base font-bold mb-9'>Education</h2>
+                <h2 className='text-3xl font-bold mb-12 text-slate-900 dark:text-slate-100 tracking-tight transition-colors duration-300'>Education</h2>
                 {Education.map((ed) => (
-                  <div className='mb-5'>
+                  <div className='mb-0'>
                     <Timeline key={ed.id} id={ed.id} logo={ed.logo} name={ed.school_name} duration={ed.duration} headline={ed.degree} description={false} isLast={ed.isLast}/>
                   </div>
                 ))}
               </section>
 
               {/* Awards Section */}
-              <section id="Awards" className='mt-[50px] text-xs lg:text-sm'
+              <section id="Awards" className='mt-20 text-sm lg:text-base'
                 data-aos="fade-up"
               >
-                <h2 className='text-base font-bold mb-9'>Awards</h2>
+                <h2 className='text-center text-3xl font-bold mb-4 text-slate-900 dark:text-slate-100 tracking-tight transition-colors duration-300'>My Awards</h2>
+                <p className='text-lg mb-12 text-center text-slate-600 dark:text-slate-300 font-medium transition-colors duration-300'>
+                  Awards I have been fortunate to attain.
+                </p>
                 <div className='flex flex-row w-full'>
                   <Awards />
                 </div>
               </section>
 
               {/* Tech Stack */}
-              <section id="TechStack" className='mt-[50px]'
+              <section id="TechStack" className='mt-20'
                 data-aos="fade-up"
               >
-                <h2 className='text-3xl font-bold mb-1 text-center'>My Tech Stack</h2>
-                <p className='text-base mb-9 text-center'>
+                <h2 className='text-4xl font-bold mb-4 text-center text-slate-900 dark:text-slate-100 tracking-tight transition-colors duration-300'>My Tech Stack</h2>
+                <p className='text-lg mb-12 text-center text-slate-600 dark:text-slate-300 font-medium transition-colors duration-300'>
                   Technologies I work with to build interesting projects.
                 </p>
                 <div>
@@ -226,11 +230,11 @@ export default function App() {
               </section>
 
               {/* My Projects */}
-              <section id="Projects" className='mt-[50px]'
+              <section id="Projects" className='mt-20'
                 data-aos="fade-up"
               >
-                <h2 className='text-3xl font-bold mb-1 text-center'>My Projects</h2>
-                <p className='text-base mb-9 text-center text-gray-600'>
+                <h2 className='text-4xl font-bold mb-4 text-center text-slate-900 dark:text-slate-100 tracking-tight transition-colors duration-300'>My Projects</h2>
+                <p className='text-lg mb-12 text-center text-slate-600 dark:text-slate-300 font-medium transition-colors duration-300'>
                   A selection of my recent work, showcasing my skills and interests.
                 </p>
                 <MyProjects />
@@ -241,7 +245,7 @@ export default function App() {
 
               {/* Contacts Section */}
               
-              <div className='w-full text-center mb-24 text-gray-600'>That's all for now :)</div>
+              <div className='w-full text-center mb-32 text-slate-500 dark:text-slate-400 font-medium text-lg transition-colors duration-300'>That's all for now :)</div>
 
             </div>
           </div>
