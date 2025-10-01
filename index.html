@@ -1,15 +1,47 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background-color: #f8fafc;">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Michael R Suryajaya</title>
+    <script>
+      // Immediate dark mode detection before page load
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+          
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.backgroundColor = '#0f172a';
+            document.querySelector('html').style.backgroundColor = '#0f172a';
+            // Update theme-color meta tag for mobile browsers
+            const themeColorMetas = document.querySelectorAll('meta[name="theme-color"]');
+            themeColorMetas.forEach(meta => meta.setAttribute('content', '#0f172a'));
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.backgroundColor = '#f8fafc';
+            document.querySelector('html').style.backgroundColor = '#f8fafc';
+            // Update theme-color meta tag for mobile browsers
+            const themeColorMetas = document.querySelectorAll('meta[name="theme-color"]');
+            themeColorMetas.forEach(meta => meta.setAttribute('content', '#f8fafc'));
+          }
+        } catch (e) {
+          // Fallback if localStorage or other APIs are not available
+          console.log('Theme detection failed:', e);
+        }
+      })();
+    </script>
   </head>
-  <body class="font-inter">
+  <body class="font-inter" style="background-color: inherit;">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

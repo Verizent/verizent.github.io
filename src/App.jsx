@@ -2,7 +2,7 @@ import { useState } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { FaLinkedin, FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedin, FaInstagramSquare, FaGithub } from "react-icons/fa";
 import { RiMailUnreadFill } from "react-icons/ri";
 
 import MyPhoto from './Assets/Photo.png'
@@ -33,7 +33,7 @@ export default function App() {
     }, 800)
   }
 
-  // Hero Component (reusable)
+  // Hero Component
   const HeroSection = ({ isIntro = false }) => (
     <section 
       id="Hero" 
@@ -60,6 +60,7 @@ export default function App() {
           <div className='mt-[20px] flex flex-row justify-start text-left'>
             <a className="mr-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300 text-3xl hover:scale-110 transform" href="https://www.instagram.com/michaelrichardsuryajaya" target="_blank" rel="noopener noreferrer"><FaInstagramSquare/></a>
             <a className="mr-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300 text-3xl hover:scale-110 transform" href="https://id.linkedin.com/in/michael-richard-suryajaya" target="_blank" rel="noopener noreferrer"><FaLinkedin/></a>
+            <a className="mr-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300 text-3xl hover:scale-110 transform" href="https://www.github.com/Verizent" target="_blank" rel="noopener noreferrer"><FaGithub/></a>
             <a className="mr-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300 text-3xl hover:scale-110 transform" href="mailto:mrichardsuryajaya@gmail.com" target="_blank" rel="noopener noreferrer"><RiMailUnreadFill/></a>
           </div>
         </div>
