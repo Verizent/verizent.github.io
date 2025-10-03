@@ -55,7 +55,7 @@ export default function App() {
       <div className="inline-flex w-full">
         <div className='block w-[65%] pr-8'>
           <p className="text-slate-700 dark:text-slate-300 text-lg lg:text-xl text-left w-full leading-relaxed font-medium transition-colors duration-300">
-            A CS student and software engineer focused on AI, cybersecurity, and robotics. I build reliable MERN web apps. Outside work: pop covers on piano/guitar, Valorant, and edtech non-profit collabs. Always open to building something cool or random chats.
+            A CS student and software engineer focused on AI and web development. I build reliable MERN web apps. Outside work: pop covers on piano/guitar, Valorant, and edtech non-profit collabs. Always open to building something cool or random chats.
           </p>
           <div className='mt-[20px] flex flex-row justify-start text-left'>
             <a className="mr-4 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-all duration-300 text-3xl hover:scale-110 transform" href="https://www.instagram.com/michaelrichardsuryajaya" target="_blank" rel="noopener noreferrer"><FaInstagramSquare/></a>
