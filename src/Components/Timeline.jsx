@@ -4,7 +4,7 @@ export default function Timeline(props) {
   const [isExpanded, setIsExpanded] = useState(false);
   const contentRef = useRef(null);
   const [contentHeight, setContentHeight] = useState(0);
-  const [lineHeight, setLineHeight] = useState(100); // Default line height
+  const [lineHeight, setLineHeight] = useState(150); // Default line height
 
   const toggleExpand = () => {
     if (props.description) {
@@ -19,7 +19,7 @@ export default function Timeline(props) {
       const height = isExpanded ? contentRef.current.scrollHeight : 0;
       setContentHeight(height);
       // Update line height based on content height + some padding
-      setLineHeight(height + 90);
+      setLineHeight(height + 100);
     }
   }, [isExpanded, props.description_list]);
 
@@ -45,13 +45,15 @@ export default function Timeline(props) {
         
         {/* Connecting Line */}
         {!props.isLast && (
-          <svg className="mx-auto bg-gradient-to-t from-slate-200/20 via-slate-300/15 to-slate-200/20 dark:from-slate-600/20 dark:via-slate-500/15 dark:to-slate-600/20 backdrop-blur-sm" width="2" height={lineHeight}>
+          <svg className="mx-auto bg-gradient-to-b from-slate-400/100 via-slate-400/90 to-slate-400/0 dark:from-slate-600/100 dark:via-slate-500/90 dark:to-slate-600/0 backdrop-blur-sm" width="2" height={props.description ? lineHeight + 20 : lineHeight}>
             <line 
               x1="1" 
               y1="0" 
               x2="1" 
-              y2={lineHeight} 
+              y2={props.description ? lineHeight + 50 : lineHeight} 
+              stroke=""
               strokeWidth="2" 
+              className="text-slate-300 dark:text-slate-600"
             />
           </svg>
         )}
@@ -81,12 +83,14 @@ export default function Timeline(props) {
                 aria-label={isExpanded ? "Collapse details" : "Expand details"}
               >
                 <svg 
-                  className={`focus:outline-none transition-transform duration-300 flex ${isExpanded ? 'rotate-90' : ''}`}
+                  className={`w-5 h-5 focus:outline-none transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`}
                   fill="none" 
                   stroke="currentColor" 
-                  viewBox="0 0 48 48"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 12l20 12-20 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             )}
@@ -122,6 +126,8 @@ export default function Timeline(props) {
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
+                width="16"
+                height="16"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
