@@ -77,7 +77,7 @@ export default function App() {
             className="glass-button glass-button-hover rounded-full px-8 py-4 flex flex-col items-center gap-3 group hover:scale-105 transform"
           >
             <span className="text-slate-800 dark:text-slate-200 font-semibold text-sm tracking-wide transition-colors duration-300">
-              Scroll for more
+              Click for more
             </span>
             <svg 
               className="w-5 h-5 text-slate-700 dark:text-slate-300 group-hover:translate-y-1 transition-transform duration-300" 
