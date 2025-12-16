@@ -40,7 +40,7 @@ export const portfolioData = {
       start: "Sep 2023",
       end: "Present",
       description: [
-        "Headed the Summer Bridge program, aimed at preoccupying Indonesian soon-to-be freshmans with basic knowledge related to their majors or areas of interest during the summer holiday.",
+        "Headed the Summer Bridge program, aimed at preoccupying Indonesian soon-to-be freshmens with basic knowledge related to their majors or areas of interest during the summer holiday.",
         "Led development of the organization's first official website using the MERN (MongoDB, Express.js, React.js, Node.js) stack, delivering a fully responsive and user-friendly experience across all devices."
       ],
       isLast: false,
