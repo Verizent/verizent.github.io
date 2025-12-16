@@ -180,6 +180,11 @@ export const portfolioData = {
         artist: 'Maudy Ayunda',
         spotifyUrl: 'https://open.spotify.com/track/1ACIq7dH1SX4yXhyPoAVKu?si=60d76153b7e145e6'
       },
+      {
+        title: 'Can\'t Take My Eyes Off You',
+        artist: 'Frankie Valli',
+        spotifyUrl: 'https://open.spotify.com/track/6ft9PAgNOjmZ2kFVP7LGqb?si=2ad4205f748b4dfc'
+      },
     ],
     jazz: [
       {
@@ -191,11 +196,6 @@ export const portfolioData = {
         title: 'Feeling Good',
         artist: 'Anthony Newley, Leslie Bricusse; covered by Michael Bublé',
         spotifyUrl: 'https://open.spotify.com/track/1AM8QdDFZMq6SrrqUnuQ9P?si=ac575a03f9044d13'
-      },
-      {
-        title: 'Can\'t Take My Eyes Off You',
-        artist: 'Frankie Valli',
-        spotifyUrl: 'https://open.spotify.com/track/6ft9PAgNOjmZ2kFVP7LGqb?si=2ad4205f748b4dfc'
       },
     ],
   },
