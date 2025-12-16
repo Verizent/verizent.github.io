@@ -43,7 +43,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" data-aos="fade-up">
         <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">About</h2>
-        <p className="text-pretty font-sans text-sm text-gray-600 dark:text-gray-400 mt-2">
+        <p className="text-pretty text-justify font-sans text-sm text-gray-600 dark:text-gray-400 mt-2">
           {parseMarkdownLinks(portfolioData.about_me)}
         </p>
       </section>
@@ -55,7 +55,7 @@ export default function Home() {
           <div className="relative">
             <div className="absolute left-6 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800"></div>
             {portfolioData.work.map((work, index) => (
-              <div key={work.company} className="relative mb-3" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div key={work.company} className={`relative ${index == 0 ? "mt-0" : "mt-3"}`} data-aos="fade-up" data-aos-delay={index * 100}>
                 <ResumeCard
                   logoUrl={work.logoUrl}
                   altText={work.company}
@@ -78,7 +78,7 @@ export default function Home() {
           <div className="relative">
             <div className="absolute left-6 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800"></div>
             {portfolioData.education.map((education, index) => (
-              <div key={education.school} className="relative mb-3" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div key={education.school} className={`relative ${index == 0 ? "mt-0" : "mt-3"}`} data-aos="fade-up" data-aos-delay={index * 100}>
                 <ResumeCard
                   logoUrl={education.logoUrl}
                   altText={education.school}
