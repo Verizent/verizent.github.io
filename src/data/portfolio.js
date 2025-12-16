@@ -95,7 +95,7 @@ export const portfolioData = {
       description: 'A non-profit platform that empowers students by offering free educational resources, mentorship, and a collaborative learning community.',
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
       links: [
-        { type: "Website", href: 'https://www.inakademia.com' }
+        { type: "Website (SSL expired)", href: 'https://www.inakademia.com' }
       ],
     },
     {
