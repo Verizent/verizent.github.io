@@ -67,7 +67,7 @@ export const portfolioData = {
       href: "https://cuhk.edu.hk",
       degree: "BSc in Computer Science",
       logoUrl: CUHK,
-      start: "Aug 2024",
+      start: "Sep 2024",
       end: "Present",
     },
     {
@@ -91,7 +91,7 @@ export const portfolioData = {
     },
     {
       title: 'INAkademia',
-      dates: "Sep 2023 - Present",
+      dates: "May - Jun 2025",
       description: 'A non-profit platform that empowers students by offering free educational resources, mentorship, and a collaborative learning community.',
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
       links: [
@@ -100,7 +100,7 @@ export const portfolioData = {
     },
     {
       title: 'HKD to IDR Discord Bot',
-      dates: "2025",
+      dates: "Jul 2025",
       description: 'A Discord bot that integrates with a currency exchange rate API to track and report HKD to IDR fluctuations, equipped with custom commands functionalities.',
       technologies: ["Python", "Discord.py"],
       links: [
@@ -109,7 +109,7 @@ export const portfolioData = {
     },
     {
       title: 'AutoMeal Buddy',
-      dates: "2024",
+      dates: "Apr 2024",
       description: 'A programmable Arduino-based pet feeder that allows users to set precise feeding times, ensuring pets are fed consistently even when their owners are away.',
       technologies: ["Arduino", "C++"],
       links: [
