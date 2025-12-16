@@ -41,9 +41,8 @@ export const portfolioData = {
       end: "Present",
       description: [
         "Headed the Summer Bridge program, aimed at preoccupying Indonesian soon-to-be freshmens with basic knowledge related to their majors or areas of interest during the summer holiday.",
-        "Led development of the organization's first official website using the MERN (MongoDB, Express.js, React.js, Node.js) stack, delivering a fully responsive and user-friendly experience across all devices."
+        "Developed the organization's first official website using the MERN (MongoDB, Express.js, React.js, Node.js) stack, delivering a fully responsive and user-friendly experience across all devices."
       ],
-      isLast: false,
     },
     {
       id: 1,
@@ -58,7 +57,6 @@ export const portfolioData = {
         "Developed the official event website with React.js, enhancing digital engagement and user experience",
         "Implemented responsive, cross-browser design for seamless access across all devices"
       ],
-      isLast: true,
     },
   ],
   
@@ -71,7 +69,6 @@ export const portfolioData = {
       logoUrl: CUHK,
       start: "Aug 2024",
       end: "Present",
-      isLast: false,
     },
     {
       id: 1,
@@ -81,7 +78,6 @@ export const portfolioData = {
       logoUrl: BPK_Penabur,
       start: "Jul 2021",
       end: "May 2024",
-      isLast: true,
     },
   ],
   
