@@ -6,6 +6,7 @@ import { parseMarkdownLinks } from '../utils/markdown';
 import { ResumeCard } from '../components/ResumeCard';
 import { ProjectCard } from '../components/ProjectCard';
 import { TechStack } from '../components/TechStack';
+import Snowfall from 'react-snowfall';
 
 export default function Home() {
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-8 px-6 py-12 sm:py-24">
+      <Snowfall />
       
       {/* Hero Section */}
       <section id="hero" data-aos="fade-up">

@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { getPost } from '../data/blog';
+import Snowfall from 'react-snowfall';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -19,6 +20,8 @@ export default function BlogPost() {
   if (!post) {
     return (
       <div className="mx-auto w-full max-w-2xl space-y-8 px-6 py-12 sm:py-24">
+        <Snowfall />
+        
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Post not found</h1>
           <Link to="/blog" className="text-blue-600 dark:text-blue-400 hover:underline mt-4 inline-block">

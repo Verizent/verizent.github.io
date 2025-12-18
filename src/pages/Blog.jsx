@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { getBlogPosts } from '../data/blog';
+import Snowfall from 'react-snowfall';
 
 export default function Blog() {
   const posts = getBlogPosts();
@@ -17,6 +18,8 @@ export default function Blog() {
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-8 px-6 py-12 sm:py-24">
+      <Snowfall />
+
       <section id="blog" data-aos="fade-up">
         <div className="space-y-12 w-full py-12">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
