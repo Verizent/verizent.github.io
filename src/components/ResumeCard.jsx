@@ -28,11 +28,17 @@ export function ResumeCard({
       <div className="flex border border-gray-200 dark:border-gray-800 rounded-lg p-4 hover:shadow-lg transition-all duration-300 bg-white dark:bg-black hover:scale-[1.02]">
         <div className="flex-none">
           <div className="w-12 h-12 rounded-full border border-gray-300 dark:border-gray-700 overflow-hidden bg-white dark:bg-white flex items-center justify-center">
-            <img
-              src={logoUrl}
-              alt={altText}
-              className="w-full h-full object-contain"
-            />
+            {logoUrl ? (
+              <img
+                src={logoUrl}
+                alt={altText}
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <span className="text-xs font-bold text-gray-500">
+                {altText?.split(' ').filter(w => /[A-Z]/i.test(w[0])).slice(0, 2).map(w => w[0].toUpperCase()).join('')}
+              </span>
+            )}
           </div>
         </div>
         <div className="flex-grow ml-4">

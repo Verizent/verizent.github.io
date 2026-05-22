@@ -86,6 +86,30 @@ export default function Home() {
                   subtitle={education.degree}
                   href={education.href}
                   period={`${education.start} - ${education.end}`}
+                  description={education.description}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Activities & Leadership Section */}
+      <section id="activities" data-aos="fade-up">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Activities & Leadership</h2>
+          <div className="relative">
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800"></div>
+            {portfolioData.activities.map((activity, index) => (
+              <div key={`${activity.company}-${activity.id}`} className={`relative ${index == 0 ? "mt-0" : "mt-3"}`} data-aos="fade-up" data-aos-delay={index * 100}>
+                <ResumeCard
+                  logoUrl={activity.logoUrl}
+                  altText={activity.company}
+                  title={activity.company}
+                  subtitle={activity.title}
+                  href={activity.href}
+                  period={`${activity.start} - ${activity.end}`}
+                  description={activity.description}
                 />
               </div>
             ))}

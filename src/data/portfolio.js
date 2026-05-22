@@ -6,10 +6,10 @@ import CUHK from '../Assets/CUHK.png';
 export const portfolioData = {
   name: "Michael Richard Suryajaya",
   initials: "MR",
-  description: "Full-Stack Developer & CS Student at CUHK. I love building things and helping people.",
+  description: "CS student at CUHK (Algorithms & Complexity).",
   about_me: "I was born in Indonesia and now study [Computer Science in Hong Kong](/#education), where most of my adventures happen from behind a screen. I'm the kind of person who builds [a Discord bot](/#projects) to track currency exchange rates just because the idea popped into my head and wouldn't leave. That's how most things start for me: a spark of curiosity, a few hours of research, and suddenly I'm knee-deep in APIs and documentation. Growing up, I was always drawn to math, tech, and anything that made me ask \"how does this work?\" That curiosity didn't stay confined to one field—it pulled me into education, psychology, and even productivity systems. I love learning how people think, how systems scale, and how ideas evolve. I'm not just interested in building things—I want to understand the logic behind them. These days, I spend most of my time coding and occasionally falling down rabbit holes of niche topics. I'm a stay-at-home kind of person, happiest when I'm deep in a project, exploring a new concept, or just tinkering with something that might turn into something bigger. Curiosity isn't just part of me—it's the reason I keep moving forward.",
   avatarUrl: Photo,
-  
+
   contact: {
     email: "michael.richard.suryajayaa@gmail.com",
     tel: "",
@@ -22,53 +22,84 @@ export const portfolioData = {
         name: "LinkedIn",
         url: "https://linkedin.com/in/michael-richard-suryajaya",
       },
-      Instagram: {
-        name: "Instagram",
-        url: "https://www.instagram.com/michaelrichardsuryajaya",
-      },
     },
   },
 
   work: [
     {
       id: 0,
-      company: "INAkademia",
-      href: "https://www.inakademia.com",
-      location: "Remote",
-      title: "Summer Program Lead & Web Developer",
-      logoUrl: INAkademia,
-      start: "Sep 2023",
-      end: "Present",
+      company: "Hong Kong Science and Technology Parks (HKSTP)",
+      href: "https://www.hkstp.org",
+      location: "Hong Kong",
+      title: "AI & Data Placement (Incoming)",
+      logoUrl: null,
+      start: "Jun 2026",
+      end: "Dec 2026",
       description: [
-        "Headed the Summer Bridge program, aimed at preoccupying Indonesian soon-to-be freshmens with basic knowledge related to their majors or areas of interest during the summer holiday.",
-        "Developed the organization's first official website using the MERN (MongoDB, Express.js, React.js, Node.js) stack, delivering a fully responsive and user-friendly experience across all devices."
+        "Supporting platform operations, data project execution, and ecosystem research on global AI & data trends across Hong Kong's innovation ecosystem."
       ],
     },
     {
       id: 1,
-      company: "Smakonecup",
-      href: "https://smakone.org",
-      location: "Jakarta, Indonesia",
-      title: "Web Developer",
-      logoUrl: BPK_Penabur,
-      start: "May 2023",
-      end: "Oct 2023",
+      company: "INAkademia",
+      href: "https://www.inakademia.com",
+      location: "Remote",
+      title: "Full Stack Web Developer",
+      logoUrl: INAkademia,
+      start: "Sep 2023",
+      end: "Jan 2026",
       description: [
-        "Developed the official event website with React.js, enhancing digital engagement and user experience",
-        "Implemented responsive, cross-browser design for seamless access across all devices"
+        "Architected and built the organisation's first full-stack web platform using the MERN stack (active development Apr – Aug 2025).",
+        "Designed backend APIs, MongoDB schemas, secure authentication, and a responsive React frontend serving 250+ users.",
+        "Platform launch supported 115% YoY growth in program sign-ups."
       ],
     },
   ],
-  
+
+  activities: [
+    {
+      id: 0,
+      company: "INAkademia",
+      href: "https://www.inakademia.com",
+      location: "Remote",
+      title: "Head of Summer Bridge Program",
+      logoUrl: INAkademia,
+      start: "Mar 2025",
+      end: "Jul 2025",
+      description: [
+        "Led a one-month online program delivering 6 subject classes to 200+ participants.",
+        "Drove 115% YoY enrollment growth through curriculum design and outreach coordination."
+      ],
+    },
+    {
+      id: 1,
+      company: "PPI Hong Kong",
+      href: "https://www.ppihongkong.org",
+      location: "Hong Kong",
+      title: "Co-Director, Multimedia & Marketing",
+      logoUrl: null,
+      start: "Sep 2025",
+      end: "Present",
+      description: [
+        "Directing multimedia for a 1,000+ member Indonesian student organisation in Hong Kong."
+      ],
+    },
+  ],
+
   education: [
     {
       id: 0,
       school: "The Chinese University of Hong Kong",
       href: "https://cuhk.edu.hk",
-      degree: "BSc in Computer Science",
+      degree: "BSc Computer Science · Algorithms & Complexity",
       logoUrl: CUHK,
       start: "Sep 2024",
-      end: "Present",
+      end: "Jun 2028",
+      description: [
+        "GPA: 3.81/4.00 · Dean's List 2024/25",
+        "Scholarships: University Admissions Scholarship (2024–2028), Honors at Entrance (2024), Liao Yuan Tung Memorial Scholarship (2025/26)",
+        "Relevant Coursework: Data Structures & Algorithms, Probability, Statistics, Linear Algebra, Discrete Mathematics, Computer Organization & Design, Calculus"
+      ],
     },
     {
       id: 1,
@@ -80,22 +111,29 @@ export const portfolioData = {
       end: "May 2024",
     },
   ],
-  
+
   projects: [
     {
-      title: 'Online Exam Invigilator App',
-      dates: "Oct - Nov 2024",
-      description: 'A live exam monitoring app leveraging Amazon Rekognition for facial analysis and cheat detection (made for the PwC Hackathon).',
-      technologies: ["Java", "AWS", "React"],
+      title: 'Algorithmic Trading Competition',
+      dates: "Mar 2026",
+      description: 'Competed in a real-time crypto trading simulation (Roostoo) as part of a team. Developed and backtested trading strategies using historical price data and Python on AWS.',
+      technologies: ["Python", "AWS"],
       links: [],
     },
     {
-      title: 'INAkademia',
-      dates: "May - Jun 2025",
-      description: 'A non-profit platform that empowers students by offering free educational resources, mentorship, and a collaborative learning community.',
+      title: 'Online Exam Invigilator System',
+      dates: "Oct – Nov 2024",
+      description: '1st place at PwC Hack A Day 2024, representing CUHK across Hong Kong and Macau universities. Built the React frontend for a live exam monitoring system powered by AWS Rekognition for real-time facial analysis and cheat detection.',
+      technologies: ["React.js", "Java", "AWS", "Docker"],
+      links: [],
+    },
+    {
+      title: 'INAkademia Platform',
+      dates: "Apr – Aug 2025",
+      description: 'Full-stack educational platform serving 250+ users. Designed and built end-to-end using the MERN stack with backend APIs, MongoDB schemas, and secure authentication.',
       technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
       links: [
-        { type: "Website (SSL expired)", href: 'https://www.inakademia.com' }
+        { type: "Website", href: 'https://www.inakademia.com' }
       ],
     },
     {
@@ -107,35 +145,36 @@ export const portfolioData = {
         { type: "Source", href: 'https://github.com/Verizent/IDinHK' }
       ],
     },
-    {
-      title: 'AutoMeal Buddy',
-      dates: "Apr 2024",
-      description: 'A programmable Arduino-based pet feeder that allows users to set precise feeding times, ensuring pets are fed consistently even when their owners are away.',
-      technologies: ["Arduino", "C++"],
-      links: [
-        { type: "Source", href: 'https://github.com/Verizent/Arduino-Time-Settable-Pet-Feeder' }
-      ],
-    },
   ],
-  
+
   awards: [
     {
-      title: 'PwC Hackathon Champion',
-      issuer: 'PwC China',
+      title: '1st Place — PwC Hack A Day 2024',
+      issuer: 'PwC China · CUHK Representative, HK & Macau',
       year: '2024',
     },
     {
-      title: "Dean's List 2024-2025",
+      title: "Dean's List 2024/25",
       issuer: 'The Chinese University of Hong Kong',
       year: '2025',
     },
     {
-      title: 'Honors at Entrance 2024-2025',
+      title: 'Liao Yuan Tung Memorial Scholarship',
+      issuer: 'The Chinese University of Hong Kong',
+      year: '2025/26',
+    },
+    {
+      title: 'University Admissions Scholarship',
+      issuer: 'The Chinese University of Hong Kong',
+      year: '2024–2028',
+    },
+    {
+      title: 'Honors at Entrance',
       issuer: 'The Chinese University of Hong Kong',
       year: '2024',
-    }
+    },
   ],
-  
+
   music: {
     worship: [
       {
