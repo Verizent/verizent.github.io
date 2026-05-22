@@ -2,6 +2,8 @@ import Photo from '../Assets/Photo.jpg';
 import INAkademia from '../Assets/INAkademia.jpg';
 import BPK_Penabur from '../Assets/BPK_Penabur.jpg';
 import CUHK from '../Assets/CUHK.png';
+import HKSTP from '../Assets/HKSTP.png';
+import PPIHK from '../Assets/PPIHK.png'
 
 export const portfolioData = {
   name: "Michael Richard Suryajaya",
@@ -32,7 +34,7 @@ export const portfolioData = {
       href: "https://www.hkstp.org",
       location: "Hong Kong",
       title: "AI & Data Placement (Incoming)",
-      logoUrl: null,
+      logoUrl: HKSTP,
       start: "Jun 2026",
       end: "Dec 2026",
       description: [
@@ -77,7 +79,7 @@ export const portfolioData = {
       href: "https://www.ppihongkong.org",
       location: "Hong Kong",
       title: "Co-Director, Multimedia & Marketing",
-      logoUrl: null,
+      logoUrl: PPIHK,
       start: "Sep 2025",
       end: "Present",
       description: [
