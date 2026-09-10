@@ -54,14 +54,6 @@ function ExperienceRow({ item, education = false }) {
   );
 }
 
-const projectLabels = [
-  "Quantitative exploration",
-  "Hackathon winner",
-  "Built for learning",
-  "A little everyday utility",
-];
-const projectSymbols = ["↗", "⌘", "ia.", "↔"];
-
 export default function Home() {
   const [genre, setGenre] = useState("worship");
   useEffect(() => {
@@ -84,8 +76,7 @@ export default function Home() {
             </h1>
             <p className="hero-description">
               I build software and explore the systems behind it.
-              <br className="desktop-break" /> Computer Science at CUHK. Always
-              learning.
+              <br className="desktop-break" /> {data.description}
             </p>
             <div className="hero-actions">
               <a href="#projects" className="button">
@@ -137,35 +128,20 @@ export default function Home() {
             with that understanding.
           </p>
           <div className="about-columns">
-            <p>
-              {data.about_intro ||
-                "I’m a Computer Science student at The Chinese University of Hong Kong, focusing on Algorithms & Complexity. Originally from Indonesia, I’m interested in the space where software, data, and real-world problems meet."}
-            </p>
-            <p>
-              {data.about_detail ||
-                "That curiosity has taken me from building an education platform to experimenting with algorithmic trading and making a Discord bot for currency exchange rates. Beyond code, I care about education, community, and making room for the next thing to learn."}
-            </p>
+            <p>{data.about_intro}</p>
+            <p>{data.about_detail}</p>
           </div>
         </div>
         <div className="fact-strip">
-          <div>
-            <strong>
-              250<span>+</span>
-            </strong>
-            <p>Users on the INAkademia platform</p>
-          </div>
-          <div>
-            <strong>
-              1<span>st</span>
-            </strong>
-            <p>PwC Hack A Day 2024</p>
-          </div>
-          <div>
-            <strong>
-              3.81<span>/4.00</span>
-            </strong>
-            <p>GPA at CUHK</p>
-          </div>
+          {data.highlights.map((highlight) => (
+            <div key={highlight.label}>
+              <strong>
+                {highlight.value}
+                <span>{highlight.suffix}</span>
+              </strong>
+              <p>{highlight.label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -185,11 +161,11 @@ export default function Home() {
           {data.projects.map((project, i) => (
             <article
               key={project.title}
-              className={`project-card project-${i}`}
+              className={`project-card project-${project.visual}`}
             >
               <div className="project-art" aria-hidden="true">
-                <span className="project-art-label">{projectLabels[i]}</span>
-                <span className="project-symbol">{projectSymbols[i]}</span>
+                <span className="project-art-label">{project.category}</span>
+                <span className="project-symbol">{project.symbol}</span>
                 <span className="project-art-number">0{i + 1}</span>
                 <div className="art-lines">
                   {Array.from({ length: 9 }, (_, n) => (

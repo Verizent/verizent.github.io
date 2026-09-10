@@ -1,46 +1,128 @@
 export const techStack = {
-  "Core Programming": {
-    "Languages": {
-      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg", title: "C" },
-      1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", title: "Java" },
-      2: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", title: "Python" },
-      3: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", title: "JavaScript" },
-      4: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg", title: "Ruby" },
-      5: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", title: "C++" },
-    }
-  },
-  "Web Technologies": {
-    "Frontend": {
-      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", title: "React.js" },
-      1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", title: "HTML5" },
-      2: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", title: "CSS3" },
-      3: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg", title: "Tailwind CSS" },
+  Programming: {
+    "": {
+      0: {
+        title: "Python",
+      },
+      1: {
+        title: "Java",
+      },
+      2: {
+        title: "C",
+      },
+      3: {
+        title: "C++",
+      },
+      4: {
+        title: "JavaScript",
+      },
+      5: {
+        title: "SQL",
+      },
+      6: {
+        title: "Ruby",
+      },
     },
-    "Backend": {
-      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", title: "Node.js" },
-      1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", title: "Express.js" },
-    }
   },
-  "Databases": {
+  "AI & Data": {
     "": {
-      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", title: "MySQL" },
-      1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", title: "MongoDB" },
-    }
+      0: {
+        title: "Ollama",
+      },
+      1: {
+        title: "OpenClaw",
+      },
+      2: {
+        title: "Hermes Agent",
+      },
+      3: {
+        title: "RAG pipelines",
+      },
+      4: {
+        title: "Pandas",
+      },
+      5: {
+        title: "NumPy",
+      },
+      6: {
+        title: "scikit-learn",
+      },
+    },
   },
-  "Data Science & ML": {
+  "Web Development": {
     "": {
-      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg", title: "Pandas" },
-      1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg", title: "NumPy" },
-      2: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg", title: "Scikit-Learn" },
-    }
+      0: {
+        title: "React",
+      },
+      1: {
+        title: "Node.js",
+      },
+      2: {
+        title: "Express.js",
+      },
+      3: {
+        title: "Ruby on Rails",
+      },
+      4: {
+        title: "Tailwind CSS",
+      },
+    },
   },
-  "Tools & Platforms": {
+  Databases: {
     "": {
-      0: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", title: "Git" },
-      1: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", title: "Docker" },
-      2: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg", title: "Linux" },
-      3: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", title: "AWS" },
-      4: { imgUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg", title: "Heroku" },
-    }
-  }
+      0: {
+        title: "MongoDB",
+      },
+      1: {
+        title: "Mongoose",
+      },
+      2: {
+        title: "MySQL",
+      },
+      3: {
+        title: "PostgreSQL",
+      },
+    },
+  },
+  Infrastructure: {
+    "": {
+      0: {
+        title: "Docker",
+      },
+      1: {
+        title: "Linux",
+      },
+      2: {
+        title: "Git",
+      },
+      3: {
+        title: "AWS",
+      },
+      4: {
+        title: "Heroku",
+      },
+      5: {
+        title: "NVIDIA GPU / HPC",
+      },
+    },
+  },
+  "Testing & Integrations": {
+    "": {
+      0: {
+        title: "RSpec",
+      },
+      1: {
+        title: "Cucumber",
+      },
+      2: {
+        title: "Stripe",
+      },
+      3: {
+        title: "Google Maps API",
+      },
+      4: {
+        title: "SMTP",
+      },
+    },
+  },
 };

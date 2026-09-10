@@ -449,27 +449,27 @@ summary:focus-visible {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.project-1 .project-art {
+.project-invigilator .project-art {
   background: #242c28;
   color: #e3e9d9;
 }
-.project-1 .art-lines i {
+.project-invigilator .art-lines i {
   border-radius: 20%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-.project-2 .project-art {
+.project-education .project-art {
   background: #e3dccc;
   color: #574b31;
 }
-.project-2 .art-lines i {
+.project-education .art-lines i {
   border-radius: 0;
   transform: translate(-50%, -50%) rotate(15deg);
 }
-.project-3 .project-art {
+.project-currency .project-art {
   background: #d4dfe4;
   color: #344e5c;
 }
-.project-3 .art-lines i {
+.project-currency .art-lines i {
   width: 280px;
   border-radius: 50%;
 }
@@ -1161,4 +1161,13 @@ summary:focus-visible {
   .button:hover {
     transform: none;
   }
+}
+
+.project-marketplace .project-art {
+  background: #dce3eb;
+  color: #354858;
+}
+.project-marketplace .art-lines i {
+  border-radius: 12%;
+  transform: translate(-50%, -50%) rotate(-8deg);
 }
