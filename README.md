@@ -1,194 +1,43 @@
-# 🌐 Personal Portfolio Website
+# Michael Richard — Personal website
 
-A modern, responsive portfolio website built with **Vite.js** and **React**, featuring a clean design with dark mode support, smooth animations, and a dynamic blog system.
+A personal portfolio built with React 19, Vite, and React Router. The design combines an editorial layout with quiet surfaces, serif accents, and light and dark themes.
 
-[![Deploy to GitHub Pages](https://github.com/Verizent/verizent.github.io/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://github.com/Verizent/verizent.github.io/actions)
+## Development
 
-## 🚀 Live Demo
+Use Node.js 22.12 or newer.
 
-**[verizent.github.io](https://verizent.github.io)**
-
-## ✨ Features
-
-- **🎨 Modern UI/UX** - Clean, professional design with smooth transitions and hover effects
-- **🌓 Dark Mode** - Toggle between light and pitch-black dark theme
-- **📱 Fully Responsive** - Optimized for all screen sizes and devices
-- **✍️ Dynamic Blog** - HTML-based blog system with routing support
-- **🎵 Music Section** - Curated Spotify playlist with direct links
-- **💼 Work & Education Timeline** - Interactive resume with connecting lines
-- **🛠️ Skills Showcase** - Animated carousel with technology categorization
-- **🎯 Projects Gallery** - Featured projects with live links and tech stack
-- **🏆 Awards & Achievements** - Recognition and honors section
-- **📧 Contact Integration** - Direct email and social media links
-- **⚡ Lightning Fast** - Vite-powered development with optimized builds
-- **🎬 Scroll Animations** - AOS (Animate On Scroll) integration throughout
-- **🔗 Client-side Routing** - React Router for seamless navigation
-
-## 🛠️ Tech Stack
-
-### Core
-- **[Vite](https://vitejs.dev/)** - Next Generation Frontend Tooling
-- **[React 19](https://react.dev/)** - UI Library
-- **[React Router DOM](https://reactrouter.com/)** - Client-side Routing
-
-### Styling
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS Framework
-- **[PostCSS](https://postcss.org/)** - CSS Processing
-- **[Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)** - Google Font
-
-### Libraries & Tools
-- **[AOS](https://michalsnik.github.io/aos/)** - Animate On Scroll Library
-- **ESLint** - Code Quality
-- **GitHub Actions** - CI/CD Pipeline
-
-## 📂 Project Structure
-
-```
-my-new-web/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Actions deployment
-├── public/
-│   ├── Assets/                 # Images and media
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx          # Bottom navigation bar
-│   │   ├── ProjectCard.jsx     # Project display cards
-│   │   ├── ResumeCard.jsx      # Work/Education cards
-│   │   └── TechStack.jsx       # Skills carousel
-│   ├── data/
-│   │   ├── blog.js             # Blog posts data
-│   │   ├── portfolio.js        # Main portfolio data
-│   │   └── techStack.js        # Technology categories
-│   ├── pages/
-│   │   ├── Home.jsx            # Main landing page
-│   │   ├── Blog.jsx            # Blog listing page
-│   │   └── BlogPost.jsx        # Individual blog post
-│   ├── utils/
-│   │   └── markdown.jsx        # Markdown link parser
-│   ├── App.jsx                 # Router configuration
-│   ├── index.css               # Global styles
-│   └── main.jsx                # Entry point
-├── package.json
-├── tailwind.config.js
-└── vite.config.js
+```sh
+npm ci
+npm run dev
 ```
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 22.x or higher
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Verizent/verizent.github.io.git
-   cd verizent.github.io
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   ```
-   http://localhost:5173
-   ```
-
-### Build for Production
-
-```bash
+```sh
 npm run build
-```
-
-Built files will be in the `dist/` directory.
-
-### Preview Production Build
-
-```bash
+npm run lint
 npm run preview
 ```
 
-## 🌐 Deployment
+The production build is written to `dist/`.
 
-This project uses **GitHub Actions** for automatic deployment to GitHub Pages.
+## Content and design
 
-### Deployment Workflow
-- Pushes to `master` branch trigger automatic builds
-- Vite builds the project to `dist/`
-- 404.html is created for SPA routing support
-- Built files are deployed to `gh-pages` branch
-- Site is live at **verizent.github.io**
+- `src/data/portfolio.js`: biography, work, education, leadership, projects, awards, contact, and music.
+- `src/data/techStack.js`: skills grouped by discipline.
+- `src/data/blog.js`: posts with slugs, dates, summaries, and trusted, author-written HTML. Do not insert untrusted HTML here.
+- `src/pages/Home.jsx`: portfolio sections and music genre selector.
+- `src/pages/Blog.jsx` and `src/pages/BlogPost.jsx`: writing index and individual posts.
+- `src/components/Navbar.jsx`: desktop/mobile navigation and theme control.
+- `src/index.css`: responsive layout and shared design tokens.
+- `src/Assets/`: portrait and organization logos.
 
-### Manual Deployment
-```bash
-npm run build
-# Deploy the dist/ folder to your hosting service
-```
+All original sections are retained: introduction, about, work experience, education, activities and leadership, skills, projects, awards, music, and contact. The homepage also includes a writing preview. Existing blog URLs remain available.
 
-## 📝 Customization
+The initial theme follows the system preference. Choosing a theme saves it in local storage under `portfolio-theme` and restores it before the page renders. If storage is unavailable, switching still works for the current page session.
 
-### Update Portfolio Data
-Edit `src/data/portfolio.js` to customize:
-- Personal information
-- Work experience
-- Education
-- Projects
-- Awards
-- Music preferences
-- Contact details
+The site includes keyboard focus states, a skip link, labeled controls, reduced-motion support, and a mobile navigation menu. Fonts use local system stacks; project artwork is CSS-based and has no external image dependency.
 
-### Add Blog Posts
-Add new posts in `src/data/blog.js`:
-```javascript
-{
-  slug: "post-url",
-  title: "Post Title",
-  publishedAt: "2025-12-16",
-  summary: "Brief summary...",
-  content: `<p>HTML content...</p>`
-}
-```
+## Deployment
 
-### Modify Tech Stack
-Update `src/data/techStack.js` to add/remove technologies.
+The existing GitHub Actions workflow builds pushes to `master` and deploys `dist/` to the `gh-pages` branch. It copies the entry page to `404.html` so direct visits to blog URLs can load the client-side router on GitHub Pages.
 
-### Styling
-- Global styles: `src/index.css`
-- Tailwind config: `tailwind.config.js`
-- Component-level: Inline Tailwind classes
-
-## 🎨 Color Scheme
-
-- **Light Mode**: White background with gray accents
-- **Dark Mode**: Pitch black (#000000) with subtle grays
-- **Accent**: Green (#10B981) for interactive elements
-
-## � Inspiration
-
-Design and structure inspired by [dillionverma/portfolio](https://github.com/dillionverma/portfolio)
-
-## �📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👤 Author
-
-**Michael Richard Suryajaya**
-
-- GitHub: [@Verizent](https://github.com/Verizent)
-- LinkedIn: [Michael Richard Suryajaya](https://linkedin.com/in/michael-richard-suryajaya)
-- Email: mrichardsuryajaya@gmail.com
-
----
-
-⭐ **Star this repo if you found it helpful!**
+Committing locally does not publish the website. A push to `master` triggers deployment.

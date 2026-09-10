@@ -4,15 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Michael Richard Suryajaya — Computer Science at CUHK. Projects, experience, and notes on building software and understanding systems." />
+    <meta
+      name="description"
+      content="Michael Richard Suryajaya — Computer Science at CUHK. Projects, experience, and notes on building software and understanding systems."
+    />
     <meta name="theme-color" content="#f7f7f2" />
     <script>
       (() => {
         let theme;
-        try { theme = localStorage.getItem('portfolio-theme'); } catch {}
-        if (theme !== 'dark' && theme !== 'light') theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        try {
+          theme = localStorage.getItem("portfolio-theme");
+        } catch {}
+        if (theme !== "dark" && theme !== "light")
+          theme = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
         document.documentElement.dataset.theme = theme;
-        document.documentElement.classList.toggle('dark', theme === 'dark');
+        document.documentElement.classList.toggle("dark", theme === "dark");
       })();
     </script>
     <title>Michael Richard — Software, systems & curiosity</title>
