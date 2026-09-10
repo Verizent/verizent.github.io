@@ -1,6 +1,5 @@
 export function ProjectCard({
   title,
-  href,
   description,
   dates,
   technologies,
