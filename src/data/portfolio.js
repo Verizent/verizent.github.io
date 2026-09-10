@@ -22,7 +22,7 @@ export const portfolioData = {
     { value: "3.82", suffix: "/4.00", label: "Cumulative GPA at CUHK" },
   ],
   contact: {
-    email: "mrichardsuryajaya@gmail.com",
+    email: "michael.richard.suryajayaa@gmail.com",
     social: {
       GitHub: { name: "GitHub", url: "https://github.com/Verizent" },
       LinkedIn: {
@@ -219,6 +219,12 @@ export const portfolioData = {
   music: {
     worship: [
       {
+        title: "Heart of Worship",
+        artist: "Phil Wickham, Matt Redman",
+        spotifyUrl:
+          "https://open.spotify.com/track/7BRUdA2d4eer6Y1VtKviec?si=4c4cff1726074695",
+      },
+      {
         title: "The Blessing",
         artist: "Elevation Worship, Kari Jobe, Cody Carnes",
         spotifyUrl:
@@ -235,6 +241,18 @@ export const portfolioData = {
         artist: "Elevation Worship",
         spotifyUrl:
           "https://open.spotify.com/track/3gtqd9P8kZblHf4I7Ybub2?si=2f4c7020764945a3",
+      },
+      {
+        title: "Here I Bow",
+        artist: "Michael W. Smith",
+        spotifyUrl:
+          "https://open.spotify.com/track/1GXDj3xZdZz6wjpE7Dz8U5?si=981396bab621487e",
+      },
+      {
+        title: "Great Are You Lord",
+        artist: "All Sons & Daughters, David Leonard",
+        spotifyUrl:
+          "https://open.spotify.com/track/2BuCf7ulsl6BSLcb1BBT4H?si=2d892c354ace4a43",
       },
     ],
     pop: [
@@ -269,10 +287,10 @@ export const portfolioData = {
           "https://open.spotify.com/track/1ACIq7dH1SX4yXhyPoAVKu?si=60d76153b7e145e6",
       },
       {
-        title: "Can't Take My Eyes Off You",
-        artist: "Frankie Valli",
+        title: "Stay With Me",
+        artist: "Sam Smith",
         spotifyUrl:
-          "https://open.spotify.com/track/6ft9PAgNOjmZ2kFVP7LGqb?si=2ad4205f748b4dfc",
+          "https://open.spotify.com/track/0bvcF8AXDBqyz4TqudAfWh?si=7a9f354251cc41bb",
       },
     ],
     jazz: [

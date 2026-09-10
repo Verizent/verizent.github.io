@@ -313,7 +313,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="writing" className="section">
+      {/* <section id="writing" className="section">
         <SectionHeading
           number="08"
           label="Writing"
@@ -342,11 +342,11 @@ export default function Home() {
         <Link to="/blog" className="text-link all-posts">
           All writing ↗
         </Link>
-      </section>
+      </section> */}
 
       <section id="music" className="section music-section">
         <SectionHeading
-          number="09"
+          number="08"
           label="Beyond the code"
           title={
             <>
@@ -406,7 +406,7 @@ export default function Home() {
       </section>
 
       <section id="contact" className="contact-section">
-        <p className="eyebrow">10 / Say hello</p>
+        <p className="eyebrow">09 / Say hello</p>
         <h2>
           Good things start
           <br />
