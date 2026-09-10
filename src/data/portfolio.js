@@ -52,7 +52,6 @@ export const portfolioData = {
     {
       id: 1,
       company: "INAkademia",
-      href: "https://www.inakademia.com",
       location: "Remote",
       title: "Full Stack Web Developer",
       logoUrl: INAkademia,
@@ -69,7 +68,6 @@ export const portfolioData = {
     {
       id: 0,
       company: "INAkademia",
-      href: "https://www.inakademia.com",
       location: "Remote",
       title: "Head of Summer Bridge Programme",
       logoUrl: INAkademia,
@@ -158,7 +156,7 @@ export const portfolioData = {
       description:
         "Built an educational non-profit’s first full-stack platform, serving 250+ users and supporting 115% year-over-year programme sign-up growth. Developed the React frontend, backend APIs, Mongoose data schemas, and bcrypt-based authentication.",
       technologies: ["MongoDB", "Express.js", "React", "Node.js"],
-      links: [{ type: "Website", href: "https://www.inakademia.com" }],
+      links: [],
     },
     {
       title: "Algorithmic Trading Competition",

@@ -544,7 +544,8 @@ summary:focus-visible {
   letter-spacing: -0.025em;
   line-height: 1.4;
 }
-.experience-title a {
+.experience-title a,
+.experience-title .organization-name {
   display: inline-block;
   font-size: 0.875rem;
   color: var(--muted);

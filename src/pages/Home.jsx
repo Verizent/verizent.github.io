@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { portfolioData as data } from "../data/portfolio";
-import { getBlogPosts } from "../data/blog";
 import { techStack } from "../data/techStack";
 
 function SectionHeading({ number, label, title, children }) {
@@ -36,10 +35,16 @@ function ExperienceRow({ item, education = false }) {
           />
           <div>
             <h3>{education ? item.degree : item.title}</h3>
-            <a href={item.href} target="_blank" rel="noreferrer">
-              {education ? item.school : item.company}{" "}
-              <span aria-hidden="true">↗</span>
-            </a>
+            {item.href ? (
+              <a href={item.href} target="_blank" rel="noreferrer">
+                {education ? item.school : item.company}{" "}
+                <span aria-hidden="true">↗</span>
+              </a>
+            ) : (
+              <span className="organization-name">
+                {education ? item.school : item.company}
+              </span>
+            )}
           </div>
         </div>
         {item.description && (
