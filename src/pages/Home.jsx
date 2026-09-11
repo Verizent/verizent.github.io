@@ -222,7 +222,20 @@ export default function Home() {
         />
         <div className="experience-list">
           {data.work.map((item) => (
-            <ExperienceRow key={item.id} item={item} />
+            <article className="experience-row work-summary" key={item.id}>
+              <div className="experience-title">
+                <div>
+                  <h3>{item.title}</h3>
+                  {item.href ? (
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      {item.company}
+                    </a>
+                  ) : (
+                    <span className="organization-name">{item.company}</span>
+                  )}
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </section>

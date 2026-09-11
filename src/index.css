@@ -1172,3 +1172,7 @@ summary:focus-visible {
   border-radius: 12%;
   transform: translate(-50%, -50%) rotate(-8deg);
 }
+
+.experience-row.work-summary {
+  grid-template-columns: 1fr;
+}

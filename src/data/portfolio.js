@@ -41,13 +41,6 @@ export const portfolioData = {
       logoUrl: HKSTP,
       start: "Jun 2026",
       end: "Present",
-      description: [
-        "Authoring an end-to-end LLM deployment cookbook to onboard tenants onto the on-premise HPC platform, covering containerised services, inter-service integration, and inference endpoints.",
-        "Developing a document generation system on a dedicated NVIDIA DGX Spark to turn long, unstructured prompts into structured papers, evaluating prompting and retrieval-augmented generation (RAG).",
-        "Deployed a containerised data re-identification risk assessment pipeline, integrating sdcMicro with Ollama-served LLMs for AI-assisted anonymisation.",
-        "Evaluated Microsoft Presidio for detecting personally identifiable information in unstructured text and images, including its integration with the HPC platform.",
-        "Evaluated third-party AI agent platforms against internal requirements and presented findings and recommendations to team leadership.",
-      ],
     },
     {
       id: 1,
@@ -57,11 +50,6 @@ export const portfolioData = {
       logoUrl: INAkademia,
       start: "Apr 2025",
       end: "Aug 2025",
-      description: [
-        "Architected and built the educational non-profit’s first full-stack platform using MongoDB, Express.js, React, and Node.js, with Mongoose schemas and bcrypt-based authentication.",
-        "Grew the platform’s user base to 250+ and supported 115% year-over-year programme sign-up growth.",
-        "Affiliated with the organisation from September 2023 to January 2026; led active platform development from April to August 2025.",
-      ],
     },
   ],
   activities: [
