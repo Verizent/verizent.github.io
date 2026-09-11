@@ -220,10 +220,25 @@ export default function Home() {
             </>
           }
         />
-        <div className="experience-list">
+        <ol
+          className="work-timeline"
+          aria-label="Work experience timeline, most recent first"
+        >
           {data.work.map((item) => (
-            <article className="experience-row work-summary" key={item.id}>
-              <div className="experience-title">
+            <li className="timeline-item" key={item.id}>
+              <p className="timeline-period">
+                {item.start} — {item.end}
+              </p>
+              <span className="timeline-marker" aria-hidden="true" />
+              <div className="timeline-content">
+                <img
+                  className="timeline-logo"
+                  src={item.logoUrl}
+                  alt=""
+                  width="48"
+                  height="48"
+                  loading="lazy"
+                />
                 <div>
                   <h3>{item.title}</h3>
                   {item.href ? (
@@ -231,13 +246,13 @@ export default function Home() {
                       {item.company}
                     </a>
                   ) : (
-                    <span className="organization-name">{item.company}</span>
+                    <p>{item.company}</p>
                   )}
                 </div>
               </div>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </section>
       <section id="education" className="section">
         <SectionHeading

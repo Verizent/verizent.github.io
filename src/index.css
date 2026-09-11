@@ -1173,6 +1173,106 @@ summary:focus-visible {
   transform: translate(-50%, -50%) rotate(-8deg);
 }
 
-.experience-row.work-summary {
-  grid-template-columns: 1fr;
+.work-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 12px 0 0;
+}
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 180px 24px minmax(0, 1fr);
+  column-gap: 24px;
+  padding-bottom: 52px;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  left: 215px;
+  top: 12px;
+  bottom: -12px;
+  background: var(--line);
+}
+.timeline-period {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.8125rem;
+  line-height: 24px;
+  color: var(--muted);
+}
+.timeline-marker {
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+  margin: 6px auto 0;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--paper);
+}
+.timeline-item:first-child .timeline-marker {
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--tint);
+}
+.timeline-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+.timeline-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  object-fit: contain;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.timeline-content h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+.timeline-content p,
+.timeline-content a {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.timeline-content a:hover {
+  color: var(--accent);
+}
+@media (max-width: 760px) {
+  .timeline-item {
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 10px 18px;
+    padding-bottom: 38px;
+  }
+  .timeline-period {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .timeline-marker {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .timeline-content {
+    grid-column: 2;
+    gap: 12px;
+  }
+  .timeline-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .timeline-item:not(:last-child)::before {
+    left: 9px;
+  }
+  .timeline-content h3 {
+    font-size: 1.125rem;
+  }
 }
